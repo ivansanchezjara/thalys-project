@@ -8,6 +8,7 @@ import { ShoppingCart, Menu, X, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import logoImg from "../../../public/logo_Thalys.png";
 import { useCart } from "@/app/context/CartContext";
+import CategoriesMenu from "./CategoriesMenu"; // <--- 1. Importamos el componente
 
 export default function MainHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -43,13 +44,17 @@ export default function MainHeader() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-gray-600 self-stretch">
-          {navLinks.map((link) => (
+
+          {/* 2. AÑADIMOS EL MENÚ DE CATEGORÍAS AQUÍ */}
+          <CategoriesMenu />
+
+          {/* Mapeamos el resto de links, excluyendo "Productos" porque ya está en el menú */}
+          {navLinks.filter(link => link.name !== "Productos").map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`relative flex items-center h-full transition-colors hover:text-gray-900 ${
-                pathname === link.href ? "text-gray-900 font-medium" : ""
-              }`}
+              className={`relative flex items-center h-full transition-colors hover:text-gray-900 ${pathname === link.href ? "text-gray-900 font-medium" : ""
+                }`}
             >
               {link.name}
               {pathname === link.href && (
@@ -98,31 +103,34 @@ export default function MainHeader() {
 
       {/* Mobile Menu - Limpio y sin el botón negro de pedido */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-gray-100 bg-white ${
-          mobileOpen
-            ? "max-h-[400px] opacity-100"
-            : "max-h-0 opacity-0 pointer-events-none"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-gray-100 bg-white ${mobileOpen
+          ? "max-h-[800px] opacity-100 overflow-y-auto" // Aumentamos max-h para que quepa el acordeón
+          : "max-h-0 opacity-0 pointer-events-none"
+          }`}
       >
         <div className="flex flex-col gap-2 p-4 pb-6">
-          {navLinks.map((link) => (
+
+          {/* 3. AÑADIMOS EL MENÚ MÓVIL AQUÍ */}
+          <CategoriesMenu mobile={true} onItemClick={() => setMobileOpen(false)} />
+
+          {/* Mapeamos el resto de links, excluyendo "Productos" */}
+          {navLinks.filter(link => link.name !== "Productos").map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`p-4 rounded-2xl text-xl font-poppins transition-colors flex items-center justify-between ${
-                pathname === link.href
-                  ? "bg-gray-50 text-thalys-blue font-bold"
-                  : "text-gray-600 active:bg-gray-50 font-medium"
-              }`}
+              onClick={() => setMobileOpen(false)}
+              className={`p-4 rounded-2xl text-xl font-poppins transition-colors flex items-center justify-between ${pathname === link.href
+                ? "bg-gray-50 text-thalys-blue font-bold"
+                : "text-gray-600 active:bg-gray-50 font-medium"
+                }`}
             >
               <span>{link.name}</span>
               <ArrowRight
                 size={20}
-                className={`transition-transform duration-300 ${
-                  pathname === link.href
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-4 opacity-0"
-                }`}
+                className={`transition-transform duration-300 ${pathname === link.href
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-4 opacity-0"
+                  }`}
               />
             </Link>
           ))}

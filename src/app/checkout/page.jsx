@@ -38,7 +38,7 @@ export default function CheckoutPage() {
       // Incluimos la variante en el texto de WhatsApp
       const variantText = item.variant ? ` (${item.variant})` : "";
       message += `✅ *${item.name}${variantText}*\n`;
-      message += `   Cant: ${item.quantity} | Cód: ${item.productCode}\n\n`;
+      message += `Cant: ${item.quantity} | Cód: ${item.productCode}\n\n`;
     });
 
     const encodedMessage = encodeURIComponent(message);

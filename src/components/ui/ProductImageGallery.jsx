@@ -38,11 +38,10 @@ export default function ProductImageGallery({
             <button
               key={index}
               onClick={() => setSelectedImage(img)}
-              className={`relative h-20 w-20 rounded-2xl overflow-hidden border-2 transition-all bg-white ${
-                selectedImage === img
+              className={`relative h-20 w-20 rounded-2xl overflow-hidden border-2 transition-all bg-white ${selectedImage === img
                   ? "border-thalys-blue shadow-md scale-105"
                   : "border-transparent hover:border-gray-200"
-              }`}
+                }`}
             >
               <Image
                 src={`${thalysImagesUrl}${img}`}

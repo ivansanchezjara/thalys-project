@@ -48,7 +48,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start gap-3">
           <h4 className="font-poppins font-semibold mb-3">WhatsApp</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-3">
+            <li className="flex text-left items-center gap-3">
               <a
                 href="https://wa.me/595983600789?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20productos%20Thalys."
                 target="_blank"
@@ -61,7 +61,12 @@ export default function Footer() {
               <span>
                 Ing. Victor Rolando Sanchez Samaniego
                 <br />
-                <strong>+595 983 600 789</strong>
+                <a
+                  href="tel:+595983600789"
+
+                >
+                  <strong>+595 983 600 789</strong>
+                </a>
               </span>
             </li>
           </ul>
@@ -86,7 +91,7 @@ export default function Footer() {
                   href="tel:+59521205055"
                   className="hover:text-thalys-gold transition-colors"
                 >
-                  +595 21 20 50 55
+                  <strong>+595 21 20 50 55</strong>
                 </a>
               </div>
             </li>
@@ -105,7 +110,7 @@ export default function Footer() {
                   href="tel:+59561510830"
                   className="hover:text-thalys-gold transition-colors"
                 >
-                  +595 61 51 08 30
+                  <strong>+595 61 51 08 30</strong>
                 </a>
               </div>
             </li>

@@ -1,0 +1,119 @@
+import { findProductAndVariant, getProductsByCategory, getFeaturedProducts, getProducts } from "@/lib/productsData";
+import { notFound } from "next/navigation";
+import { THALYS_IMAGES_URL } from "@/assets/constants";
+import { getCategoryConfig } from "@/config/categories";
+import CategoryTemplate from "@/components/products/CategoryTemplate";
+import ProductDetailView from "@/components/products/ProductDetailView"; // <--- Importamos el componente
+import { toSlug } from "@/utils/textHelpers";
+import React from "react";
+
+// --- METADATA (Se mantiene igual) ---
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const segments = Array.isArray(slug) ? slug : [slug];
+  const lastSegment = segments[segments.length - 1];
+
+  const { product, selectedVariant } = findProductAndVariant(lastSegment);
+
+  if (product) {
+    const displayName = selectedVariant
+      ? `${product.name} (${selectedVariant.variant})`
+      : product.name;
+    const mainImg = Array.isArray(product.image) ? product.image[0] : product.image;
+
+    return {
+      title: `${displayName} | Thalys`,
+      description: product.longDescription,
+      openGraph: {
+        images: [{ url: `${THALYS_IMAGES_URL}${mainImg}` }],
+      },
+    };
+  }
+  return { title: "Productos | Thalys" };
+}
+
+// --- PÁGINA PRINCIPAL ---
+export default async function ProductPage({ params }) {
+  const { slug } = await params;
+  const segments = Array.isArray(slug) ? slug : [slug];
+  const lastSegment = segments[segments.length - 1];
+
+  // 1. ¿ES UN PRODUCTO? (Prioridad)
+  const { product, selectedVariant } = findProductAndVariant(lastSegment);
+
+  if (product) {
+    // Delegamos toda la UI al componente ProductDetailView
+    // Pasamos 'segments' para que el componente pueda calcular el pathPrefix y Breadcrumbs
+    return (
+      <ProductDetailView
+        product={product}
+        selectedVariant={selectedVariant}
+        segments={segments}
+      />
+    );
+  }
+
+  // 2. ¿Es una Categoría o Subcategoría?
+  const categoryConfig = getCategoryConfig(segments[0]);
+  if (categoryConfig) {
+    let initialProducts = categoryConfig.isSpecial ? getFeaturedProducts() : getProductsByCategory(categoryConfig.name);
+    let title = categoryConfig.title;
+    let description = categoryConfig.description;
+
+    // Si hay un segundo segmento, es subcategoría
+    if (segments.length === 2) {
+      const subSlug = segments[1];
+      initialProducts = initialProducts.filter(p => toSlug(p.subCategory) === subSlug);
+
+      if (initialProducts.length > 0) {
+        title = initialProducts[0].subCategory;
+        description = `Productos en ${title} de la categoría ${categoryConfig.name}`;
+      }
+    }
+
+    return (
+      <CategoryTemplate
+        categoryName={categoryConfig.name}
+        categorySlug={segments[0]}
+        subCategorySlug={segments[1] || null}
+        title={title}
+        description={description}
+        initialProducts={initialProducts}
+      />
+    );
+  }
+
+  // 3. ¿Es una Especialidad (professionalArea)?
+  const { getProfessionalAreas, getProductsByProfessionalArea } = await import("@/lib/productsData");
+  const specialties = getProfessionalAreas();
+  const specialtyName = specialties.find(s => toSlug(s) === segments[0]);
+
+  if (specialtyName) {
+    let initialProducts = getProductsByProfessionalArea(specialtyName);
+    let title = specialtyName;
+
+    // Lógica para manejar la subcategoría dentro de la especialidad (/products/cirugia/bisturi)
+    if (segments.length >= 2) {
+      const subSlug = segments[1];
+      initialProducts = initialProducts.filter(p => toSlug(p.subCategory || "") === subSlug);
+
+      if (initialProducts.length > 0) {
+        title = initialProducts[0].subCategory;
+      }
+    }
+
+    return (
+      <CategoryTemplate
+        categoryName={specialtyName}
+        categorySlug={segments[0]}
+        subCategorySlug={segments[1] || null}
+        title={title}
+        description={`Instrumental especializado para ${specialtyName}.`}
+        initialProducts={initialProducts}
+      />
+    );
+  }
+
+  // 4. Fallback
+  notFound();
+}

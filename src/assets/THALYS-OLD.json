@@ -63,26 +63,10 @@
     "longDescription": "Guantes de examen fabricados en nitrilo de alta resistencia, color azul. Libres de látex y polvo. Brindan excelente sensibilidad táctil y protección biosegura.",
     "tags": ["guantes", "nitrilo", "azul", "bioseguridad"],
     "variants": [
-      {
-        "productCode": "THA-3801101A",
-        "variant": "XP",
-        "subSlug": "xp"
-      },
-      {
-        "productCode": "THA-3801102A",
-        "variant": "P",
-        "subSlug": "p"
-      },
-      {
-        "productCode": "THA-3801103A",
-        "variant": "M",
-        "subSlug": "m"
-      },
-      {
-        "productCode": "THA-3801104A",
-        "variant": "G",
-        "subSlug": "g"
-      }
+      { "productCode": "THA-3801101A", "variant": "XP", "subSlug": "xp" },
+      { "productCode": "THA-3801102A", "variant": "P", "subSlug": "p" },
+      { "productCode": "THA-3801103A", "variant": "M", "subSlug": "m" },
+      { "productCode": "THA-3801104A", "variant": "G", "subSlug": "g" }
     ]
   },
   {
@@ -104,26 +88,10 @@
     "longDescription": "Guantes de nitrilo color negro de alta calidad, diseñados para ofrecer máxima resistencia y una estética profesional. Libres de látex y polvo, proporcionan una excelente barrera protectora contra químicos y agentes biológicos.",
     "tags": ["guantes", "nitrilo", "negro", "bioseguridad", "proteccion"],
     "variants": [
-      {
-        "productCode": "THA-3801101N",
-        "variant": "XP",
-        "subSlug": "xp"
-      },
-      {
-        "productCode": "THA-3801102N",
-        "variant": "P",
-        "subSlug": "p"
-      },
-      {
-        "productCode": "THA-3801103N",
-        "variant": "M",
-        "subSlug": "m"
-      },
-      {
-        "productCode": "THA-3801104N",
-        "variant": "G",
-        "subSlug": "g"
-      }
+      { "productCode": "THA-3801101N", "variant": "XP", "subSlug": "xp" },
+      { "productCode": "THA-3801102N", "variant": "P", "subSlug": "p" },
+      { "productCode": "THA-3801103N", "variant": "M", "subSlug": "m" },
+      { "productCode": "THA-3801104N", "variant": "G", "subSlug": "g" }
     ]
   },
   {
@@ -168,18 +136,18 @@
     "slug": "mango-para-espejo-hollow",
     "name": "Mango para Espejo Hollow",
     "description": "Mango ergonómico tipo Hollow para espejo dental.",
-    "longDescription": "Mango para espejos fabricado en acero quirúrgico de alta calidad. Su diseño permite un peso ligero y un manejo ergonómico superior para evitar la fatiga durante tratamientos largos.",
+    "longDescription": "Mango diseñado para espejos de diagnóstico, fabricado en acero inoxidable de alta calidad. Su diseño Hollow (hueco) permite un peso ligero y un manejo ergonómico superior para evitar la fatiga durante tratamientos largos.",
     "brand": "Thalys",
     "image": ["THA-2121706.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Mangos",
+    "subCategory": "Espejos",
     "professionalAreas": "Diagnóstico",
     "attributes": {
-      "type": "Hueco",
-      "material": "Acero quirúrgico"
+      "type": "Hollow",
+      "diameter": "50mm"
     },
     "featured": false,
-    "tags": ["mango", "espejo", "hueco", "diagnóstico", "instrumental"]
+    "tags": ["mango", "espejo", "hollow", "diagnóstico", "instrumental"]
   },
   {
     "generalCode": "THA-2120101",
@@ -187,7 +155,7 @@
     "slug": "sonda-exploradora-exp5",
     "name": "Sonda Exploradora EXP5",
     "description": "Sonda con extremos combinados #17 y #23.",
-    "longDescription": "Sonda de diagnóstico de doble extremo. El extremo #17 está diseñado para la detección de cálculo subgingival en espacios interproximales, mientras que el extremo #23 (forma de cayado) es ideal para la detección de caries.",
+    "longDescription": "Instrumento de diagnóstico de doble extremo. El extremo #17 está diseñado para la detección de cálculo subgingival en espacios interproximales, mientras que el extremo #23 (forma de cayado) es ideal para la detección de caries.",
     "brand": "Thalys",
     "image": ["THA-2120101.jpg"],
     "categories": "Instrumentales",
@@ -203,74 +171,86 @@
   {
     "generalCode": "THA-2158010",
     "productCode": "THA-2158010",
-    "slug": "sonda-nabers-2n-tha-2158010",
-    "name": "Sonda NABERS 2N",
+    "slug": "sonda-periodontal-nabers-2n-tha-2158010",
+    "name": "Sonda Periodontal NABERS 2N",
     "description": "Sonda para furcación con marcas de 3-6-9-12 mm.",
-    "longDescription": "Sonda con sistema de codificación de color grabada a láser. Su diseño curvo es ideal para la evaluación de áreas de furcación. Las marcas precisas aseguran que no pierda el color con el tiempo.",
+    "longDescription": "Sonda periodontal con sistema de codificación de color grabada a láser. Su diseño curvo es ideal para la evaluación de áreas de furcación. Las marcas precisas aseguran que no pierda el color con el tiempo.",
     "brand": "Thalys",
     "image": ["THA-2158010-1.jpg", "THA-2158010-2.jpg"],
     "categories": "Instrumentales",
     "subCategory": "Sondas",
     "professionalAreas": "Diagnóstico",
     "attributes": {
+      "type": "Periodontal",
       "tip": "Nabers"
     },
     "featured": false,
-    "tags": ["sonda", "nabers", "furcacion", "diagnostico"]
+    "tags": ["sonda", "periodontal", "nabers", "furcacion", "diagnostico"]
   },
   {
     "generalCode": "THA-2158012",
     "productCode": "THA-2158012",
-    "slug": "sonda-pcp12-tha-2158012",
-    "name": "Sonda PCP12",
-    "description": "Sonda PCP12 con marcas grabadas a láser de 3-6-9-12 mm.",
-    "longDescription": "Sonda de acero quirúrgico con acabado de alta calidad. Incluye un sistema de codificación a través de marcas precisas de 3, 6, 9 y 12 mm que facilita la lectura diagnóstica sin desgaste del color por uso.",
+    "slug": "sonda-periodontal-pcp12-tha-2158012",
+    "name": "Sonda Periodontal PCP12",
+    "description": "Sonda con marcas grabadas a láser de 3-6-9-12 mm.",
+    "longDescription": "Sonda metálica con acabado de alta calidad. Incluye un sistema de codificación a través de marcas precisas de 3, 6, 9 y 12 mm que facilita la lectura diagnóstica sin desgaste del color por uso.",
     "brand": "Thalys",
     "image": ["THA-2158012-1.jpg", "THA-2158012-2.jpg"],
     "categories": "Instrumentales",
     "subCategory": "Sondas",
     "professionalAreas": "Diagnóstico",
     "attributes": {
+      "type": "Periodontal",
       "tip": "PCP12"
     },
     "featured": true,
-    "tags": ["sonda", "pcp12", "diagnostico"]
+    "tags": ["sonda", "periodontal", "pcp12", "diagnostico", "laser"]
   },
   {
     "generalCode": "THA-2158015",
     "productCode": "THA-2158015",
-    "slug": "sonda-pcpunc15-tha-2158015",
-    "name": "Sonda PCPUNC15 Univ. Carolina del Norte",
+    "slug": "sonda-periodontal-pcpunc15-tha-2158015",
+    "name": "Sonda Periodontal PCPUNC15 Univ. Carolina del Norte",
     "description": "Sonda periodontal milimetrada de 1 a 15 mm.",
-    "longDescription": "Instrumento de precisión con marcas milimetradas del 1 al 15. Fabricada con tecnología de grabado láser para asegurar mediciones exactas y durabilidad del sistema de codificación de color.",
+    "longDescription": "Instrumento de precisión con marcas milimetradas del 1 al 15. Fabricada con tecnología de grabado láser para asegurar mediciones exactas y durabilidad del sistema de codificación de color[cite: 15, 16].",
     "brand": "Thalys",
     "image": ["THA-2158015-1.jpg", "THA-2158015-2.jpg"],
     "categories": "Instrumentales",
     "subCategory": "Sondas",
     "professionalAreas": "Diagnóstico",
     "attributes": {
+      "type": "Periodontal",
       "tip": "UNC15"
     },
     "featured": false,
-    "tags": ["sonda", "pcpunc15", "carolina del norte", "diagnostico"]
+    "tags": [
+      "sonda",
+      "periodontal",
+      "pcpunc15",
+      "carolina del norte",
+      "diagnostico"
+    ]
   },
   {
     "generalCode": "THA-2120208",
     "productCode": "THA-2120208",
     "slug": "espejo-bucal-fs-viton-50mm-tha-2120208",
     "name": "Espejo Bucal FS - VITON 50 mm",
-    "description": "Espejo dental Viton de alto contraste con diámetro extra grande de 50 mm.",
-    "longDescription": "El espejo VITON ofrece un rango de visión hasta un 516% mejor que los espejos convencionales. Su superficie frontal (Front Surface) elimina la doble imagen y proporciona una claridad excepcional, ideal para fotografía dental y diagnósticos de alta precisión. Diámetro extra grande de 50 mm. Mango comercializado por separado.",
+    "description": "Espejo dental Viton de alto contraste con diámetro de 50 mm.",
+    "longDescription": "El espejo VITON ofrece una visión hasta un 516% más brillante que los espejos convencionales. Su superficie frontal (Front Surface) elimina la doble imagen y proporciona una claridad excepcional, ideal para fotografía dental y diagnósticos de alta precisión. Diámetro de 50 mm.",
     "brand": "Thalys",
     "image": ["THA-2120208-1.jpg", "THA-2120208-2.jpg", "THA-2120208-3.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espejos",
     "professionalAreas": "Diagnóstico",
     "featured": true,
-    "tags": ["espejo", "viton", "bucal", "diagnostico", "front surface"],
-    "attributes": {
-      "tip": "FS"
-    }
+    "tags": [
+      "espejo",
+      "viton",
+      "bucal",
+      "diagnostico",
+      "alta fidelidad",
+      "front surface"
+    ]
   },
   {
     "generalCode": "THA-2114004",
@@ -282,10 +262,9 @@
     "brand": "Thalys",
     "image": ["THA-2114004.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Periótomos",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["periotomo", "posterior", "cirugía", "extracción"]
+    "tags": ["periotomo", "posterior", "cirugía", "extracción", "ligamento"]
   },
   {
     "generalCode": "THA-2114005",
@@ -297,7 +276,6 @@
     "brand": "Thalys",
     "image": ["THA-2114005.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Periótomos",
     "professionalAreas": "Cirugía",
     "featured": false,
     "tags": ["periotomo", "anterior", "cirugía", "extracción", "estética"]
@@ -308,11 +286,10 @@
     "brand": "Thalys",
     "image": ["THA-2112211.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Cinceles",
     "professionalAreas": "Cirugía",
     "featured": false,
     "variantType": "Modelo",
-    "slug": "cincel-ochsenbein",
+    "slug": "cinceles-quirurgicos-ochsenbein",
     "description": "CINCELES OCHSENBEIN PARA REMODELACIÓN ÓSEA",
     "longDescription": "Instrumental quirúrgico especializado diseñado para la remodelación y contorneado del hueso alveolar. Los cinceles Ochsenbein cuentan con muescas semiafiladas que permiten eliminar hueso remanente cerca de las raíces de forma precisa y segura, minimizando el trauma en los tejidos adyacentes. Fabricados en acero inoxidable quirúrgico de alta resistencia.",
     "tags": [
@@ -336,8 +313,7 @@
         "subSlug": "2",
         "image": ["THA-2112212.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-211220-",
@@ -345,11 +321,10 @@
     "brand": "Thalys",
     "image": ["THA-2112201.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Cinceles",
     "professionalAreas": "Cirugía",
     "featured": true,
     "variantType": "Modelo",
-    "slug": "cincel-fedi",
+    "slug": "cinceles-quirurgicos-fedi",
     "description": "CINCELES FEDI PARA CIRUGÍA PERIODONTAL Y OSTEOTOMÍA",
     "longDescription": "Línea de cinceles quirúrgicos FEDI diseñados específicamente para el acceso a zonas de difícil alcance en cirugía periodontal. Sus extremos angulados permiten un contorneado óseo preciso y una osteotomía controlada, facilitando el trabajo en sectores posteriores y áreas con visibilidad reducida. Fabricados en acero inoxidable quirúrgico de alta resistencia.",
     "tags": [
@@ -374,8 +349,7 @@
         "subSlug": "2",
         "image": ["THA-2112202.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-211223-",
@@ -383,7 +357,6 @@
     "brand": "Thalys",
     "image": ["THA-2112231-1.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Cinceles",
     "professionalAreas": "Cirugía",
     "featured": true,
     "variantType": "Modelo",
@@ -417,9 +390,7 @@
         "subSlug": "5-6",
         "image": ["THA-2112233-1.jpg", "THA-2112233-2.jpg", "THA-2112233-3.jpg"]
       }
-    ],
-
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-211400-",
@@ -427,10 +398,9 @@
     "brand": "Thalys",
     "image": ["THA-2114001.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Periostótomos",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "variantType": "Modelo",
+    "variantType": "Zona de Aplicación",
     "slug": "periostotomo-allen",
     "description": "PERIOSTÓTOMO ALLEN PARA LEVANTAMIENTO DE COLGAJO",
     "longDescription": "Instrumental quirúrgico especializado de la línea Thalys diseñado para el levantamiento preciso del periostio. Sus bordes cortantes de alta calidad permiten un despegamiento del colgajo con el mínimo trauma tisular. Disponibles en configuraciones específicas para optimizar el acceso tanto en el sector anterior como en el posterior.",
@@ -455,8 +425,7 @@
         "subSlug": "1-anterior",
         "image": ["THA-2114002.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2114006",
@@ -468,11 +437,9 @@
     "brand": "Thalys",
     "image": ["THA-2114006.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Periostótomos",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["periostótomo", "buster", "cirugía", "periodoncia", "tejido"],
-    "attributes": {}
+    "tags": ["periostótomo", "buster", "cirugía", "periodoncia", "tejido"]
   },
   {
     "generalCode": "THA-2114009",
@@ -484,11 +451,9 @@
     "brand": "Thalys",
     "image": ["THA-2114009.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Periostótomos",
     "professionalAreas": "Cirugía",
     "featured": true,
-    "tags": ["periostótomo", "molt 9", "cirugía", "exodoncia"],
-    "attributes": {}
+    "tags": ["periostótomo", "molt 9", "cirugía", "exodoncia", "implantología"]
   },
   {
     "generalCode": "THA-2114014",
@@ -496,11 +461,10 @@
     "slug": "periostotomo-149-tha-2114014",
     "name": "Periostótomo #149",
     "description": "Periostótomo especializado modelo 149.",
-    "longDescription": "Periostótomo diseñado para procedimientos quirúrgicos minuciosos. Su configuración permite un control táctil superior durante el despegamiento del periostio, garantizando resultados predecibles en cirugías regenerativas.",
+    "longDescription": "Instrumento diseñado para procedimientos quirúrgicos minuciosos. Su configuración permite un control táctil superior durante el despegamiento del periostio, garantizando resultados predecibles en cirugías regenerativas.",
     "brand": "Thalys",
     "image": ["THA-2114014.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Periostótomos",
     "professionalAreas": "Cirugía",
     "featured": false,
     "tags": [
@@ -509,8 +473,7 @@
       "cirugía",
       "regeneración",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-211352-",
@@ -518,7 +481,6 @@
     "brand": "Thalys",
     "image": ["THA-2113522.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Curetas",
     "professionalAreas": "Cirugía",
     "featured": true,
     "variantType": "Modelo",
@@ -570,8 +532,7 @@
         "subSlug": "7",
         "image": ["THA-2113527.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2113500",
@@ -579,7 +540,6 @@
     "brand": "Thalys",
     "image": ["THA-2113507.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Curetas",
     "professionalAreas": "Cirugía",
     "featured": true,
     "variantType": "Modelo",
@@ -613,8 +573,7 @@
         "subSlug": "87",
         "image": ["THA-2113507.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2113512",
@@ -626,27 +585,24 @@
     "brand": "Thalys",
     "image": ["THA-2113512.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Curetas",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["cureta", "molt", "cirugía", "curetaje", "periodoncia"],
-    "attributes": {}
+    "tags": ["cureta", "molt", "cirugía", "curetaje", "periodoncia"]
   },
+
   {
     "generalCode": "THA-2111110",
     "productCode": "THA-2111110",
     "slug": "bisturi-allen-kpa-tha-2111110",
     "name": "Bisturí Allen KPA",
-    "description": "Bisturí Allen KPA para microcirugía periodontal.",
-    "longDescription": "Bisturí de la línea Allen (KPA) diseñado para procedimientos de microcirugía periodontal. Su diseño permite un despegamiento delicado y preciso del colgajo, minimizando el trauma en tejidos blandos.",
+    "description": "Instrumento Allen KPA para microcirugía periodontal.",
+    "longDescription": "Periostótomo de la línea Allen (KPA) diseñado para procedimientos de microcirugía plástica periodontal. Su diseño permite un despegamiento delicado y preciso del colgajo, minimizando el trauma en tejidos blandos.",
     "brand": "Thalys",
     "image": ["THA-2111110.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Bisturí",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["allen", "kpa", "bisturi", "microcirugía", "periodoncia"],
-    "attributes": {}
+    "tags": ["allen", "kpa", "periostótomo", "microcirugía", "periodoncia"]
   },
   {
     "generalCode": "THA-2111112",
@@ -654,15 +610,13 @@
     "slug": "bisturi-allen-orban-1-2-tha-2111112",
     "name": "Bisturí Allen/Orban 1/2",
     "description": "Bisturí combinado para cirugía periodontal.",
-    "longDescription": "Bisturí de doble extremo que combina las bondades de los diseños Allen y Orban (1/2). Ideal para incisiones interproximales y el manejo de tejidos en áreas de difícil acceso durante la cirugía periodontal.",
+    "longDescription": "Instrumento de doble extremo que combina las bondades de los diseños Allen y Orban (1/2). Ideal para incisiones interproximales y el manejo de tejidos en áreas de difícil acceso durante la cirugía periodontal.",
     "brand": "Thalys",
     "image": ["THA-2111112.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Bisturí",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["allen", "orban", "bisturí", "periodoncia", "cirugía"],
-    "attributes": {}
+    "tags": ["allen", "orban", "bisturí", "periodoncia", "cirugía"]
   },
   {
     "generalCode": "THA-2111115",
@@ -674,11 +628,9 @@
     "brand": "Thalys",
     "image": ["THA-2111115.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Bisturí",
     "professionalAreas": "Cirugía",
     "featured": true,
-    "tags": ["kirkland", "bisturí", "gingivectomía", "periodoncia", "cirugía"],
-    "attributes": {}
+    "tags": ["kirkland", "bisturí", "gingivectomía", "periodoncia", "cirugía"]
   },
   {
     "generalCode": "THA-2111117",
@@ -690,33 +642,30 @@
     "brand": "Thalys",
     "image": ["THA-2111117.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Bisturí",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["orban", "bisturí", "periodoncia", "interproximal", "cirugía"],
-    "attributes": {}
+    "tags": ["orban", "bisturí", "periodoncia", "interproximal", "cirugía"]
   },
   {
-    "generalCode": "THA-211101-",
-    "name": "Bisturí Tunelizador",
+    "generalCode": "THA-2111010",
+    "name": "Instrumentos de Tunelización",
     "brand": "Thalys",
     "image": ["THA-2111018.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Bisturí",
     "professionalAreas": "Cirugía",
     "featured": true,
     "variantType": "Modelo",
-    "slug": "bisturi-tunelizador",
+    "slug": "instrumentos-de-tunelizacion",
     "description": "INSTRUMENTOS PARA TÉCNICA DE TUNELIZACIÓN DISPONIBLES EN MODELOS TKN1 Y TKN2",
-    "longDescription": "Bisturí tunelizador diseñado para la técnica de tunelización y cirugía plástica periodontal. Estos modelos de alta precisión permiten crear túneles submucosos para la colocación de injertos de tejido conectivo, preservando la integridad de las papilas y facilitando la elevación de tejidos con el mínimo trauma posible.",
+    "longDescription": "Instrumentos de microcirugía periodontal diseñados para la técnica de tunelización y cirugía plástica periodontal. Estos modelos de alta precisión permiten crear túneles submucosos para la colocación de injertos de tejido conectivo, preservando la integridad de las papilas y facilitando la elevación de tejidos con el mínimo trauma posible.",
     "tags": [
       "tunelización",
       "tkn1",
       "tkn2",
+      "microcirugía",
       "periodoncia",
       "injerto",
-      "cirugía",
-      "bisturi"
+      "cirugía"
     ],
     "variants": [
       {
@@ -743,7 +692,6 @@
     "brand": "Thalys",
     "image": ["THA-2117110T.jpg", "THA-2117130T-4.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Porta Agujas",
     "professionalAreas": "Cirugía",
     "featured": true,
     "tags": [
@@ -753,10 +701,7 @@
       "tungsteno",
       "vidia",
       "14cm"
-    ],
-    "attributes": {
-      "tipo": "Recto"
-    }
+    ]
   },
   {
     "generalCode": "THA-2117410T",
@@ -768,7 +713,6 @@
     "brand": "Thalys",
     "image": ["THA-2117410T.jpg", "THA-2117130T-4.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Porta Agujas",
     "professionalAreas": "Cirugía",
     "featured": false,
     "tags": [
@@ -778,10 +722,7 @@
       "14cm",
       "cirugía",
       "instrumental"
-    ],
-    "attributes": {
-      "longitud": "14cm"
-    }
+    ]
   },
   {
     "generalCode": "THA-2117130",
@@ -789,7 +730,6 @@
     "brand": "Thalys",
     "image": ["THA-2117130.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Porta Agujas",
     "professionalAreas": "Cirugía",
     "featured": false,
     "variantType": "Tipo de Punta",
@@ -814,8 +754,7 @@
           "THA-2117130T-4.jpg"
         ]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2117620",
@@ -823,15 +762,13 @@
     "slug": "pinza-de-sutura-corn-sp20-tha-2117620",
     "name": "Pinza de Sutura Corn SP20",
     "description": "Pinza especializada para procedimientos de regeneración guiada de tejidos.",
-    "subCategory": "Pinzas",
     "longDescription": "Las pinzas para suturar Corn son ideales para procedimientos de regeneración guiada de tejidos (GTR). Su diseño permite un manejo extremadamente preciso de la aguja y el material de sutura en cirugías de alta complejidad.",
     "brand": "Thalys",
     "image": ["THA-2117620-1.jpg", "THA-2117620-2.jpg"],
     "categories": "Instrumentales",
     "professionalAreas": "Cirugía",
     "featured": true,
-    "tags": ["pinza", "sutura", "corn", "sp20", "regeneración", "cirugía"],
-    "attributes": {}
+    "tags": ["pinza", "sutura", "corn", "sp20", "regeneración", "cirugía"]
   },
   {
     "generalCode": "THA-2117541",
@@ -843,13 +780,9 @@
     "brand": "Thalys",
     "image": ["THA-2117541-1.jpg", "THA-2117541-2.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Pinzas",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["kocher", "hemostática", "14cm", "cirugía", "instrumental"],
-    "attributes": {
-      "longitud": "14cm"
-    }
+    "tags": ["kocher", "hemostática", "14cm", "cirugía", "instrumental"]
   },
   {
     "generalCode": "THA-2117521",
@@ -861,13 +794,9 @@
     "brand": "Thalys",
     "image": ["THA-2117521-1.jpg", "THA-2117521-2.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Pinzas",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["allis", "tejidos", "15cm", "cirugía", "sujeción"],
-    "attributes": {
-      "longitud": "15cm"
-    }
+    "tags": ["allis", "tejidos", "15cm", "cirugía", "sujeción"]
   },
   {
     "generalCode": "THA-2119010",
@@ -881,8 +810,7 @@
     "categories": "Instrumentales",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["retractor", "columbia", "cirugía", "separación", "visibilidad"],
-    "subCategory": "Varios"
+    "tags": ["retractor", "columbia", "cirugía", "separación", "visibilidad"]
   },
   {
     "generalCode": "THA-2119030",
@@ -896,8 +824,7 @@
     "categories": "Instrumentales",
     "professionalAreas": "Cirugía",
     "featured": true,
-    "tags": ["triturador", "hueso", "injerto", "cirugía", "regeneración"],
-    "subCategory": "Varios"
+    "tags": ["triturador", "hueso", "injerto", "cirugía", "regeneración"]
   },
   {
     "generalCode": "THA-2154000",
@@ -909,11 +836,15 @@
     "brand": "Thalys",
     "image": ["THA-2154000.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Curetas",
     "professionalAreas": "Periodoncia",
     "featured": true,
-    "tags": ["curvette", "sub-zero", "periodoncia", "cureta"],
-    "attributes": {}
+    "tags": [
+      "curvette",
+      "sub-zero",
+      "periodoncia",
+      "cureta",
+      "bolsas profundas"
+    ]
   },
   {
     "generalCode": "THA-215402-",
@@ -921,29 +852,27 @@
     "brand": "Thalys",
     "image": ["THA-2154021-1.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Curetas",
     "professionalAreas": "Periodoncia",
     "featured": false,
     "variantType": "Modelo",
     "slug": "cureta-demarco",
     "description": "CURETAS ESPECIALIZADAS SERIE DEMARCO",
-    "longDescription": "Las curetas DeMarco estan diseñadas para el raspado de concavidades radiculares y furcaciones. También se utilizan para la eliminación de manchas en las superficies lingual y palatina de los dientes anteriores.",
+    "longDescription": "Serie de curetas DeMarco diseñada para el tratamiento periodontal avanzado. Fabricadas por Thalys en acero inoxidable de alta calidad, ofrecen una conservación del filo sobresaliente y angulaciones específicas para facilitar el raspado y alisado en zonas de difícil acceso.",
     "tags": ["demarco", "periodoncia", "cureta", "instrumental", "precisión"],
     "variants": [
       {
         "productCode": "THA-2154021",
-        "variant": "1",
+        "variant": "DeMarco 1",
         "subSlug": "1",
         "image": ["THA-2154021-1.jpg", "THA-2154021-2.jpg", "THA-2154021-3.jpg"]
       },
       {
         "productCode": "THA-2154022",
-        "variant": "2",
+        "variant": "DeMarco 2",
         "subSlug": "2",
         "image": ["THA-2154022-1.jpg", "THA-2154022-2.jpg", "THA-2154022-3.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-21500",
@@ -951,13 +880,12 @@
     "brand": "Thalys",
     "image": ["THA-2150001.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Curetas",
     "professionalAreas": "Periodoncia",
     "featured": true,
     "variantType": "Modelo y Tipo",
     "slug": "curetas-gracey",
     "description": "CURETAS GRACEY SERIE 5/6 A 13/14",
-    "longDescription": "Las curetas Gracey de la Thalys estan disponibles en su version standard y rígida. La unión funcional de la cureta Gracey rígida es más sólida y menos flexible que la de la cureta Gracey standard. Esto permite la eliminación de cálculo moderado y pesado.",
+    "longDescription": "Instrumental periodontal de alta precisión fabricado en acero inoxidable de grado quirúrgico. Diseñadas para un raspado y alisado radicular eficaz. Disponibles en versiones Estándar y Rígida según la necesidad clínica y la dureza del cálculo.",
     "tags": ["cureta", "gracey", "periodoncia", "raspado", "thalys"],
     "variants": [
       {
@@ -1008,8 +936,7 @@
         "subSlug": "13-14-rigida",
         "image": ["THA-2150014.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-215400-",
@@ -1017,14 +944,20 @@
     "brand": "Thalys",
     "image": ["THA-2154001.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Curetas",
     "professionalAreas": "Periodoncia",
     "featured": false,
     "variantType": "Modelo",
     "slug": "cureta-goldman-fox",
     "description": "CURETAS PERIODONTALES DISPONIBLES EN MODELOS GF-1 A GF-4",
     "longDescription": "Línea de curetas especializadas Goldman-Fox de Thalys, diseñadas para un raspado y alisado radicular de alta precisión. Fabricadas en acero inoxidable quirúrgico, cada modelo ofrece una angulación específica para el acceso eficiente a diferentes caras dentales y el tratamiento de bolsas periodontales profundas.",
-    "tags": ["cureta", "goldman-fox", "periodoncia", "raspado", "thalys"],
+    "tags": [
+      "cureta",
+      "goldman-fox",
+      "periodoncia",
+      "raspado",
+      "instrumental",
+      "thalys"
+    ],
     "variants": [
       {
         "productCode": "THA-2154001",
@@ -1050,54 +983,51 @@
         "subSlug": "gf-4",
         "image": ["THA-2154004.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2160024",
     "productCode": "THA-2160024",
     "slug": "empacador-hilo-bn1-tha-2160024",
     "name": "Empacador de Hilo BN1",
-    "description": "EMPACADOR DE HILO BN1",
+    "description": "EMPACADOR DE HILO BN1 THA-2160024",
     "longDescription": "Instrumento de precisión diseñado para la colocación atraumática del hilo retractor en el surco gingival. Fabricado en acero inoxidable de grado quirúrgico, cuenta con puntas finas y anguladas para facilitar el acceso interproximal y bucal/lingual. Totalmente autoclavable.",
     "brand": "Thalys",
     "image": ["THA-2160024-1.jpg", "THA-2160024-2.jpg", "THA-2160024-3.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Empacadores",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
       "empacador",
       "hilo retractor",
       "bn1",
+      "encia",
       "restauracion",
       "acero inoxidable",
       "autoclavable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2160025",
     "productCode": "THA-2160025",
     "slug": "empacador-hilo-yardley-tha-2160025",
     "name": "Empacador de Hilo Yardley",
-    "description": "EMPACADOR DE HILO YARDLEY",
+    "description": "EMPACADOR DE HILO YARDLEY THA-2160025",
     "longDescription": "Empacador de hilo tipo Yardley, ideal para procedimientos de retracción gingival previos a la toma de impresión o restauración. Fabricado en acero inoxidable de alta resistencia, mango ergonómico para mejor control y puntas diseñadas específicamente para insertar el hilo sin lacerar el tejido gingival. Autoclavable.",
     "brand": "Thalys",
     "image": ["THA-2160025-1.jpg", "THA-2160025-2.jpg", "THA-2160025-3.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Empacadores",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
       "empacador",
       "hilo retractor",
       "yardley",
+      "encia",
       "restauracion",
       "acero inoxidable",
       "autoclavable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2160021-2",
@@ -1105,13 +1035,12 @@
     "brand": "Thalys",
     "image": ["THA-2160020.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Empacadores",
     "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Modelo",
     "slug": "empacador-hilo-113",
     "description": "DISPONIBLE EN MODELOS SERRILLADO Y NO SERRILLADO",
-    "longDescription": "Instrumento de alta precisión diseñado para la retracción gingival. El modelo 113 permite un control excepcional para posicionar el hilo retractor en el surco. Fabricado en acero inoxidable de grado quirúrgico, con mango ergonómico y totalmente autoclavable. Disponible en dos modelos: serrillado y no serrillado.",
+    "longDescription": "Instrumento de alta precisión diseñado para la retracción gingival. El modelo 113 permite un control excepcional para posicionar el hilo retractor en el surco. Fabricado en acero inoxidable de grado quirúrgico, con mango ergonómico y totalmente autoclavable.",
     "tags": [
       "empacador",
       "hilo retractor",
@@ -1134,8 +1063,7 @@
         "subSlug": "no-serrillado",
         "image": ["THA-2160021.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2160022-3",
@@ -1143,13 +1071,12 @@
     "brand": "Thalys",
     "image": ["THA-2160022-1.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Empacadores",
     "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Modelo",
     "slug": "empacador-hilo-guyer",
     "description": "DISPONIBLE EN MODELOS SERRILLADO Y NO SERRILLADO",
-    "longDescription": "Empacador de hilo tipo Guyer, diseñado con angulación específica para acceder a zonas difíciles del margen gingival. Permite un control óptimo del hilo durante la retracción para procedimientos de alta precisión. Fabricado en acero inoxidable de grado médico, con mango ergonómico y totalmente autoclavable. Disponible en dos modelos: serrillado y no serrillado.",
+    "longDescription": "Empacador de hilo tipo Guyer, diseñado con angulación específica para acceder a zonas difíciles del margen gingival. Permite un control óptimo del hilo durante la retracción para procedimientos de alta precisión. Fabricado en acero inoxidable de grado médico, con mango ergonómico y totalmente autoclavable.",
     "tags": [
       "empacador",
       "hilo retractor",
@@ -1172,22 +1099,20 @@
         "subSlug": "no-serrillado",
         "image": ["THA-2160023-1.jpg", "THA-2160023-2.jpg", "THA-2160023-3.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-217100-",
-    "name": "Espátulas Dietschi",
+    "name": "Instrumental Dietschi",
     "brand": "Thalys",
     "image": ["THA-2171001.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Modelo",
-    "slug": "espatulas-dietschi",
+    "slug": "instrumental-dietschi",
     "description": "DISPONIBLE EN 5 MODELOS DOBLES PARA MODELADO DE RESINA",
-    "longDescription": "Instrumental de obturación de la línea Scultura, diseñado bajo la filosofía Dietschi para la estratificación avanzada de resinas compuestas. Cada instrumento es de doble extremo y cuenta con formas específicas para abarcar todas las necesidades clínicas, desde el modelado cervical hasta la anatomía oclusal. Fabricados en acero inoxidable de grado quirúrgico y mango ergonómico.",
+    "longDescription": "Instrumental de obturación de la línea Scultura, diseñado bajo la filosofía Dietschi para la estratificación avanzada de resinas compuestas. Cada instrumento es de doble extremo y cuenta con formas específicas para abarcar todas las necesidades clínicas, desde el modelado cervical hasta la anatomía oclusal. Fabricados en acero inoxidable de alta calidad, pulido antiadherente y mango ergonómico.",
     "tags": [
       "scultura",
       "dietschi",
@@ -1234,14 +1159,13 @@
   {
     "generalCode": "THA-2171024",
     "productCode": "THA-2171024",
-    "slug": "espatula-resina-ab2-boghosian",
-    "name": "Espátula p/ Resina AB2 Boghosian",
-    "description": "ESPÁTULA PARA RESINA AB2 BOGHOSIAN",
-    "longDescription": "Espátula de restauración diseñada bajo el modelo Boghosian AB2. Cuenta con extremos de trabajo específicos para la colocación, condensación y modelado eficiente de resinas compuestas en cavidades posteriores. Fabricado en acero inoxidable de alto brillo, antiadherente y autoclavable.",
+    "slug": "instrumento-composite-ab2-boghosian",
+    "name": "Instrumento de Composite AB2 Boghosian",
+    "description": "INSTRUMENTO PARA COMPOSITE AB2 BOGHOSIAN THA-2171024",
+    "longDescription": "Instrumento de restauración diseñado bajo el modelo Boghosian AB2. Cuenta con extremos de trabajo específicos para la colocación, condensación y modelado eficiente de resinas compuestas en cavidades posteriores. Fabricado en acero inoxidable de alto brillo, antiadherente y autoclavable.",
     "brand": "Thalys",
     "image": ["THA-2171024.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
@@ -1250,21 +1174,20 @@
       "composite",
       "resina",
       "modelado",
-      "restauracion"
-    ],
-    "attributes": {}
+      "restauracion",
+      "acero inoxidable"
+    ]
   },
   {
     "generalCode": "THA-2171025",
     "productCode": "THA-2171025",
-    "slug": "espatula-resina-3-tufts",
-    "name": "Espátula p/ Resina 3 Tufts",
-    "description": "ESPÁTULA PARA RESINA 3 TUFTS THA-2171025",
-    "longDescription": "Espátula de modelado tipo 3 Tufts. Su diseño ergonómico y puntas activas permiten una manipulación precisa del composite, facilitando la adaptación del material a las paredes de la preparación y la escultura de la anatomía oclusal. Acero inoxidable de grado quirúrgico.",
+    "slug": "instrumento-composite-3-tufts",
+    "name": "Instrumento de Composite 3 Tufts",
+    "description": "INSTRUMENTO PARA COMPOSITE 3 TUFTS THA-2171025",
+    "longDescription": "Instrumento de modelado tipo 3 Tufts. Su diseño ergonómico y puntas activas permiten una manipulación precisa del composite, facilitando la adaptación del material a las paredes de la preparación y la escultura de la anatomía oclusal. Acero inoxidable de grado quirúrgico.",
     "brand": "Thalys",
     "image": ["THA-2171025.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
@@ -1275,8 +1198,7 @@
       "modelado",
       "restauracion",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2171026",
@@ -1288,7 +1210,6 @@
     "brand": "Thalys",
     "image": ["THA-2171026-1.jpg", "THA-2171026-2.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Bruñidores",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
@@ -1298,20 +1219,18 @@
       "pulido",
       "restauracion",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2171028",
     "productCode": "THA-2171028",
-    "slug": "espatula-resina-w1",
-    "name": "Espátula p/ Resina W1",
-    "description": "ESPÁTULA PARA MODELADO W1",
-    "longDescription": "Espátula de obturación plástica modelo W1. Diseñado con puntas finas para la colocación delicada y el esculpido de materiales de restauración en áreas de difícil acceso. Acero inoxidable de alta calidad, garantizando durabilidad y resistencia a la corrosión.",
+    "slug": "instrumento-composite-w1",
+    "name": "Instrumento de Composite W1",
+    "description": "INSTRUMENTO PARA MODELADO W1 THA-2171028",
+    "longDescription": "Instrumento de obturación plástica modelo W1. Diseñado con puntas finas para la colocación delicada y el esculpido de materiales de restauración en áreas de difícil acceso. Acero inoxidable de alta calidad, garantizando durabilidad y resistencia a la corrosión.",
     "brand": "Thalys",
     "image": ["THA-2171028-1.jpg", "THA-2171028-2.jpg", "THA-2171028-3.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
@@ -1322,20 +1241,18 @@
       "modelado",
       "restauracion",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2171023",
     "productCode": "THA-2171023",
-    "slug": "modelador-pkt-3r-cono-redondeado-tha-2171023",
-    "name": "Modelador de cera PKT-3R (Cono Redondeado)",
-    "description": "MODELADOR DE CERA PKT-3R CONO REDONDEADO",
-    "longDescription": "Modelador de cera PKT-3R con cono redondeado. Diseñado específicamente para refinar surcos y crestas durante el encerado progresivo, permitiendo una anatomía oclusal detallada. Fabricado en acero inoxidable de grado quirúrgico, su ergonomía facilita el control preciso tanto en cera como en el modelado de composite.",
+    "slug": "instrumento-pkt-3r-cono-redondeado-tha-2171023",
+    "name": "Instrumento PKT-3R (Cono Redondeado)",
+    "description": "INSTRUMENTO PKT-3R CONO REDONDEADO PARA MODELADO DE CERA THA-2171023",
+    "longDescription": "Instrumento de modelado tipo PKT-3R (Peter K. Thomas) con puntas de cono redondeado. Diseñado específicamente para refinar surcos y crestas durante el encerado progresivo, permitiendo una anatomía oclusal detallada. Fabricado en acero inoxidable de grado quirúrgico, su ergonomía facilita el control preciso tanto en cera como en el modelado de composite.",
     "brand": "Thalys",
     "image": ["THA-2171023.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Modeladores",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
@@ -1350,12 +1267,11 @@
     ]
   },
   {
-    "generalCode": "THA-21710--",
+    "generalCode": "THA-21710-IPC",
     "name": "Tallador Interproximal TIP",
     "brand": "Thalys",
     "image": ["THA-2171074.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Talladores",
     "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Modelo",
@@ -1388,22 +1304,20 @@
         "image": ["THA-2171074.jpg"],
         "description": "Diseño interproximal estándar de hoja fina."
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-217112-T",
-    "name": "Espátula p/ Resina Compuesta CIGFT",
+    "name": "Espátulas CIGFT Satinadas",
     "brand": "Thalys",
     "image": ["THA-2171121T.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Modelo",
-    "slug": "espatula-cigft",
+    "slug": "espatulas-cigft-satinadas",
     "description": "ESPÁTULAS DE ACERO SATINADO DISPONIBLES EN 4 MODELOS",
-    "longDescription": "Nuestra línea premium de espátulas CIGFT para resina compuesta, fabricadascon revestimiento de nitruro de titanio y aluminio (AlTiN) de las puntas, la cual crea una superficie lisa, extremadamente dura, antiadherente y resistente, que a su vez es facil de limpiar. Este tratamiento reduce el reflejo de la luz y proporciona propiedades antiadherentes superiores. Los modelos #3 y #4 cuentan con tecnología 'Extra-Flex', ofreciendo hojas de espátula extremadamente delgadas y flexibles para un modelado estético de máxima precisión.",
+    "longDescription": "Línea premium de espátulas CIGFT para resina compuesta, fabricadas en acero con acabado satinado. Este tratamiento reduce el reflejo de la luz y proporciona propiedades antiadherentes superiores. Los modelos #3 y #4 cuentan con tecnología 'Extra-Flex', ofreciendo hojas de espátula extremadamente delgadas y flexibles para un modelado estético de máxima precisión.",
     "tags": [
       "espatula",
       "cigft",
@@ -1440,22 +1354,20 @@
         "subSlug": "4-extra-flex",
         "image": ["THA-2171124T-1.jpg", "THA-2171124T-2.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-217113-T",
-    "name": "Espátulas p/ Resina Compuesta CIGFTM Mini",
+    "name": "Espátulas CIGFTM Mini Satinadas",
     "brand": "Thalys",
     "image": ["THA-2171131T.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Modelo",
-    "slug": "espatulas-cigftm-mini",
+    "slug": "espatulas-cigftm-mini-satinadas",
     "description": "ESPÁTULAS MINI EXTRA-FLEX DE ACERO SATINADO",
-    "longDescription": "Línea 'Mini' de espátulas CIGFTM con tecnología Extra-Flex. Estas espátulas de acero satinado poseen puntas de tamaño reducido y alta flexibilidad, diseñadas para un control micro-estético superior en zonas de difícil acceso. Su acabado revestimiento de nitruro de titanio y aluminio (AlTiN) de las puntas, la cual crea una superficie lisa, extremadamente dura, antiadherente y resistente, que a su vez es facil de limpiar.",
+    "longDescription": "Línea 'Mini' de espátulas CIGFTM con tecnología Extra-Flex. Estas espátulas de acero satinado poseen puntas de tamaño reducido y alta flexibilidad, diseñadas para un control micro-estético superior en zonas de difícil acceso. Su acabado satinado evita los reflejos de la luz y reduce la adherencia del composite.",
     "tags": [
       "espatula",
       "cigftm",
@@ -1486,59 +1398,55 @@
         "subSlug": "4-mini-extra-flex",
         "image": ["THA-2171134T.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2171141T",
     "productCode": "THA-2171141T",
-    "slug": "brunidor-21b",
-    "name": "Bruñidor 21B",
-    "description": "BRUÑIDOR 21B",
-    "longDescription": "Bruñidor modelo 21B fabricado en acero de alta calidad con acabado satinado. Su superficie tratada minimiza los reflejos y permite un bruñido suave de la restauración, asegurando un sellado marginal óptimo y un acabado superficial excelente en resinas.",
+    "slug": "brunidor-21b-satinado-tha-2171141t",
+    "name": "Bruñidor 21B Satinado",
+    "description": "BRUÑIDOR 21B DE ACERO SATINADO THA-2171141T",
+    "longDescription": "Bruñidor modelo 21B fabricado en acero de alta calidad con acabado satinado. Su superficie tratada minimiza los reflejos y permite un bruñido suave de la restauración, asegurando un sellado marginal óptimo y un acabado superficial excelente en resinas y amalgamas.",
     "brand": "Thalys",
     "image": ["THA-2171141T-1.jpg", "THA-2171141T-2.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Bruñidores",
     "professionalAreas": "Restauración",
     "featured": true,
-    "tags": ["brunidor", "21b", "satinado", "acabado", "restauracion"],
-    "attributes": {}
+    "tags": ["brunidor", "21b", "satinado", "acabado", "restauracion"]
   },
   {
     "generalCode": "THA-2171142T",
     "productCode": "THA-2171142T",
-    "slug": "esapatula-ccib",
-    "name": "Espátula de Contorneado Cosmético (CCIB)",
-    "description": "ESPÁTULA CCIB  PARA CONTORNEADO",
-    "longDescription": "Espátula 'Cosmetic Contouring' modelo CC IB. Diseñado específicamente para el contorneado cosmético de resinas compuestas. Su acabado en acero satinado antiadherente evita reflejos molestos y reduce la adherencia del material, permitiendo esculpir la anatomía dental con gran precisión.",
+    "slug": "instrumento-contorneado-cosmetico-cc-ib-tha-2171142t",
+    "name": "Instrumento de Contorneado Cosmético (CCIB)",
+    "description": "INSTRUMENTO CCIB DE ACERO SATINADO PARA CONTORNEADO",
+    "longDescription": "Instrumento 'Cosmetic Contouring' modelo CC IB. Diseñado específicamente para el contorneado cosmético de resinas compuestas. Su acabado en acero satinado evita reflejos molestos y reduce la adherencia del material, permitiendo esculpir la anatomía dental con gran precisión.",
     "brand": "Thalys",
     "image": ["THA-2171142T-1.jpg", "THA-2171142T-2.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
       "contorneado",
       "cosmetico",
-      "ccib",
+      "cc ib",
       "satinado",
       "resina",
       "composite",
-      "restauracion"
+      "restauracion",
+      "thalys"
     ]
   },
   {
     "generalCode": "THA-2171143T",
     "productCode": "THA-2171143T",
-    "slug": "empacador-resina-ccii",
+    "slug": "empacador-resina-ccii-tha-2171143t",
     "name": "Empacador de Resina (CCII)",
-    "description": "EMPACADOR DE RESINA CCII",
-    "longDescription": "Empacador de resina modelo CCII diseñado para el empacado y condensación de resina compuesta. Su diseño ergonómico y superficie satinada facilitan la manipulación del composite sin que se pegue al instrumento, ideal para cavidades pequeñas y medianas.",
+    "description": "INSTRUMENTO CCII DE ACERO SATINADO PARA EMPACAR RESINA",
+    "longDescription": "Instrumento modelo CCII diseñado para el empacado y condensación de resina compuesta. Su diseño ergonómico y superficie satinada facilitan la manipulación del composite sin que se pegue al instrumento, ideal para cavidades pequeñas y medianas.",
     "brand": "Thalys",
     "image": ["THA-2171143T-1.jpg", "THA-2171143T-2.jpg", "THA-2171143T-3.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Empacadores",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
@@ -1547,21 +1455,20 @@
       "satinado",
       "resina",
       "composite",
-      "restauracion"
-    ],
-    "attributes": {}
+      "restauracion",
+      "thalys"
+    ]
   },
   {
     "generalCode": "THA-2171144T",
     "productCode": "THA-2171144T",
-    "slug": "espatula-contorneado-cfir-l",
-    "name": "Espátula de Contorneado (CFIR/L)",
-    "description": "ESPÁTULA CFIR/L DE ACERO SATINADO PARA CONTORNEADO",
-    "longDescription": "Espátula especializada CFIR/L para el contorneado de restauraciones. Sus puntas activas están diseñadas para facilitar el acceso y modelado en áreas interproximales y caras libres, ayudando a recrear la curvatura natural del diente. Acabado satinado anti-reflejo.",
+    "slug": "instrumento-contorneado-cfir-l-tha-2171144t",
+    "name": "Instrumento de Contorneado (CFIR/L)",
+    "description": "INSTRUMENTO CFIR/L DE ACERO SATINADO PARA CONTORNEADO",
+    "longDescription": "Instrumento especializado CFIR/L para el contorneado de restauraciones. Sus puntas activas están diseñadas para facilitar el acceso y modelado en áreas interproximales y caras libres, ayudando a recrear la curvatura natural del diente. Acabado satinado anti-reflejo.",
     "brand": "Thalys",
     "image": ["THA-2171144T-1.jpg", "THA-2171144T-2.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
@@ -1578,14 +1485,13 @@
   {
     "generalCode": "THA-2171145T",
     "productCode": "THA-2171145T",
-    "slug": "brunidor-freedman-duckhead",
+    "slug": "brunidor-freedman-duckhead-tha-2171145t",
     "name": "Bruñidor Freedman Duckhead",
     "description": "BRUÑIDOR TIPO DUCKHEAD DE ACERO SATINADO",
     "longDescription": "Bruñidor diseño 'Duckhead' (Cabeza de Pato) de Freedman. Su forma única permite un bruñido extenso y suave de las superficies oclusales y vestibulares, adaptándose a diversas anatomías. Fabricado en acero satinado de alta calidad para un deslizamiento óptimo sobre el composite.",
     "brand": "Thalys",
     "image": ["THA-2171145T-1.jpg", "THA-2171145T-2.jpg", "THA-2171145T-3.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Bruñidores",
     "professionalAreas": "Restauración",
     "featured": true,
     "tags": [
@@ -1598,21 +1504,19 @@
       "composite",
       "restauracion",
       "thalys"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-217117-T",
-    "name": "Tallador Interproximal CVIPC",
+    "name": "Tallador Interproximal CVIPC Satinado",
     "brand": "Thalys",
     "image": ["THA-2171174T.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Talladores",
     "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Modelo",
-    "slug": "tallador-interproximal-cvipc",
-    "description": "TALLADOR INTERPROXIMAL (CVIPC y CVIPCL) SATINADO",
+    "slug": "tallador-interproximal-cvipc-satinado",
+    "description": "TALLADORES CVIPC DE ACERO SATINADO (CVIPC Y CVIPCL)",
     "longDescription": "Talladores interproximales de la línea satinada, diseñados para recortar y contornear resina compuesta entre los dientes sin adherencia gracias a su acabado mate. Disponible en modelo CVIPC estándar y modelo CVIPCL con cuello largo para un alcance profundo en zonas posteriores.",
     "tags": [
       "tallador",
@@ -1641,8 +1545,7 @@
         "image": ["THA-2171175T.jpg"],
         "description": "Modelo largo para mayor alcance y acceso posterior."
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-21720--",
@@ -1650,7 +1553,6 @@
     "brand": "Thalys",
     "image": ["THA-2172005-1.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Excavadores",
     "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Modelo",
@@ -1726,19 +1628,20 @@
   },
   {
     "generalCode": "THA-217120-",
-    "name": "Espátulas para Resina (Tipo Almore)",
+    "name": "Espátulas para Composite Master Set (Tipo Almore)",
     "brand": "Thalys",
     "image": ["THA-2171203-1.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Espátulas",
     "professionalAreas": "Estética",
     "featured": true,
     "variantType": "Color",
-    "slug": "espatulas-resina-almore",
-    "description": "ESPÁTULAS ALMORE DISPONIBLES EN AZUL, DORADO Y VERDE",
-    "longDescription": "Instrumental de alta precisión, fabricado en acero inoxidable de grado quirúrgico con puntas antiadherentes. Diseñado para el modelado artístico de composite y cerámica. Sus mangos codificados por color facilitan la identificación rápida y ofrecen una ergonomía superior. Totalmente autoclavable para máxima bioseguridad.",
+    "slug": "espatulas-composite-master-set-ms",
+    "description": "SET DE ESPÁTULAS MS DISPONIBLES EN AZUL, DORADO Y VERDE",
+    "longDescription": "Instrumental de alta precisión del Master Set (MS), fabricado en acero inoxidable de grado quirúrgico con puntas antiadherentes. Diseñado para el modelado artístico de composite y cerámica. Sus mangos codificados por color facilitan la identificación rápida y ofrecen una ergonomía superior. Totalmente autoclavable para máxima bioseguridad.",
     "tags": [
       "espatula",
+      "master set",
+      "ms",
       "almore",
       "composite",
       "ceramica",
@@ -1766,8 +1669,7 @@
         "subSlug": "verde",
         "image": ["THA-2171203-1.jpg", "THA-2171203-2.jpg", "THA-2171203-3.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2140109",
@@ -1779,7 +1681,6 @@
     "brand": "Thalys",
     "image": ["THA-2140109.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "tags": [
@@ -1791,8 +1692,7 @@
       "arcos",
       "alambre",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2140152",
@@ -1804,7 +1704,6 @@
     "brand": "Thalys",
     "image": ["THA-2140152.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "tags": [
@@ -1815,8 +1714,7 @@
       "corte",
       "alambre",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2140222-",
@@ -1824,7 +1722,6 @@
     "brand": "Thalys",
     "image": ["THA-2140222M.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "variantType": "Modelo",
@@ -1855,8 +1752,7 @@
         "subSlug": "222f-hembra",
         "image": ["THA-2140222F.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2140168",
@@ -1868,7 +1764,6 @@
     "brand": "Thalys",
     "image": ["THA-2140168.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "tags": [
@@ -1879,8 +1774,7 @@
       "doblez",
       "168",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2140442",
@@ -1892,7 +1786,6 @@
     "brand": "Thalys",
     "image": ["THA-2140442.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "tags": [
@@ -1902,8 +1795,7 @@
       "doblar arcos",
       "alambre",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-214111-V",
@@ -1911,7 +1803,6 @@
     "brand": "Thalys",
     "image": ["THA-2141111V.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "variantType": "Modelo",
@@ -1942,8 +1833,7 @@
         "subSlug": "150l-mango-largo",
         "image": ["THA-2141112V.jpg"]
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-214311-V",
@@ -1951,13 +1841,12 @@
     "brand": "Thalys",
     "image": ["THA-2143112V.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "variantType": "Modelo",
     "slug": "alicate-corte-distal-seguro-700",
-    "description": "CORTADORES DISTALES CON SEGURO (TAMAÑOS ESTÁNDAR Y MINI)",
-    "longDescription": "Alicates de corte distal con mecanismo de seguridad (Safety Hold). Diseñados para cortar y sujetar firmemente el extremo sobrante del arco detrás del tubo molar, evitando que el fragmento caiga en la boca del paciente. Hojas de alto rendimiento para un corte limpio al ras. Capacidad Máx de Alambre: Arcos de .021” x .025” (.55 x .64mm).",
+    "description": "CORTADORES DISTALES CON SEGURO (ESTÁNDAR Y MINI)",
+    "longDescription": "Alicates de corte distal con mecanismo de seguridad (Safety Hold). Diseñados para cortar y sujetar firmemente el extremo sobrante del arco detrás del tubo molar, evitando que el fragmento caiga en la boca del paciente. Hojas de alto rendimiento para un corte limpio al ras.",
     "tags": [
       "alicate",
       "corte distal",
@@ -1975,7 +1864,7 @@
         "variant": "#Mini",
         "subSlug": "mini",
         "image": ["THA-2143110V-1.jpg", "THA-2143110V-2.jpg"],
-        "description": "Cabezal reducido para acceso difícil."
+        "description": "Cabezal reducido para acceso difícil. Capacidad Máx: .021” x .025” (.55 x .64mm)."
       },
       {
         "productCode": "THA-2143112V",
@@ -1984,8 +1873,7 @@
         "image": ["THA-2143112V.jpg", "THA-2143112V-2.jpg"],
         "description": "Cabezal de tamaño estándar para uso general en ortodoncia."
       }
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2142111V",
@@ -1997,7 +1885,6 @@
     "brand": "Thalys",
     "image": ["THA-2142111V.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "tags": [
@@ -2008,10 +1895,7 @@
       "ortodoncia",
       "arcos",
       "acero inoxidable"
-    ],
-    "attributes": {
-      "tipo": "Recto"
-    }
+    ]
   },
   {
     "generalCode": "THA-2143121V",
@@ -2034,9 +1918,7 @@
       "delgado",
       "ortodoncia",
       "acero inoxidable"
-    ],
-    "subCategory": "Alicates",
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2140120",
@@ -2048,7 +1930,6 @@
     "brand": "Thalys",
     "image": ["THA-2140120.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
     "tags": [
@@ -2059,8 +1940,7 @@
       "ortodoncia",
       "manipulacion",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2101500",
@@ -2072,7 +1952,6 @@
     "brand": "Thalys",
     "image": ["THA-2101500.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Cajas y Organización",
     "professionalAreas": "General",
     "featured": true,
     "tags": [
@@ -2083,10 +1962,7 @@
       "organizador",
       "acero inoxidable",
       "autoclavable"
-    ],
-    "attributes": {
-      "material": "Acero Inoxidable"
-    }
+    ]
   },
   {
     "generalCode": "THA-2102500",
@@ -2098,7 +1974,6 @@
     "brand": "Thalys",
     "image": ["THA-2102500.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Cajas y Organización",
     "professionalAreas": "General",
     "featured": true,
     "tags": [
@@ -2109,8 +1984,7 @@
       "organizador",
       "cassette",
       "acero inoxidable"
-    ],
-    "attributes": {}
+    ]
   },
   {
     "generalCode": "THA-2101900",
@@ -2122,7 +1996,6 @@
     "brand": "Thalys",
     "image": ["THA-2101900.jpg"],
     "categories": "Instrumentales",
-    "subCategory": "Cajas y Organización",
     "professionalAreas": "General",
     "featured": true,
     "tags": [
@@ -2133,7 +2006,6 @@
       "organizacion",
       "acero inoxidable",
       "autoclavable"
-    ],
-    "attributes": {}
+    ]
   }
 ]

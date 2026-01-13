@@ -1,9 +1,9 @@
 import Footer from "@/components/footer/footer";
 import "./globals.css";
 import MainHeader from "@/components/main-header/main-header";
-// 1. Importamos el componente del Portal (ajusta la ruta según tu carpeta)
 import SideCart from "@/components/cart/SideCart";
 import { CartProvider } from "./context/CartContext";
+import Breadcrumbs from "@/components/ui/BreadCrumbs";
 
 export const metadata = {
   title: {
@@ -15,17 +15,18 @@ export const metadata = {
   openGraph: {
     title: "Thalys | Insumos Odontológicos",
     description: "Calidad premium para tu clínica.",
-    images: ["/logo-Thalys.png"],
+    images: ["/logo_Thalys.png"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className="antialiased scroll-smooth">
+      <body className="antialiased scroll-smooth" suppressHydrationWarning>
         <CartProvider>
           <SideCart />
           <MainHeader />
+          <Breadcrumbs />
           <main className="min-h-screen">{children}</main>
           <Footer />
         </CartProvider>

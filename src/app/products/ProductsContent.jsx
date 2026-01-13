@@ -1,128 +1,147 @@
 "use client";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-import { ProductCard } from "@/components/products/ProductsCard";
-import { ProductFilters } from "@/components/products/ProductsFilters";
-import productsData from "@/assets/THALYS.json";
-import { THALYS_IMAGES_URL } from "@/assets/constants";
-import ShareButton from "@/components/ui/ShareButton";
+import ProductsCarousel from "@/components/ui/ProductsCarousel";
+import { SearchResults } from "./SearchResults";
+import { AccordionSection } from "@/components/products/AccordionSection";
+import { getProducts } from "@/lib/productsData";
+import { normalizeText, toSlug } from "@/utils/textHelpers";
 
 export default function ProductsContent() {
   const searchParams = useSearchParams();
-
   const searchQuery = searchParams.get("q") || "";
-  const activeCategory = searchParams.get("category") || "Todos";
+  const productsData = getProducts();
+  const totalProducts = productsData.length;
 
-  const filteredProducts = useMemo(() => {
-    return productsData.filter((product) => {
-      const term = searchQuery.toLowerCase();
+  const [openSection, setOpenSection] = useState("especialidades");
 
-      // 1. Buscamos en el nombre, descripción y etiquetas del PADRE
-      const matchesSearch = searchQuery
-        ? product.name?.toLowerCase().includes(term) ||
-          product.description?.toLowerCase().includes(term) ||
-          product.tags?.some((tag) => tag.toLowerCase().includes(term)) ||
-          // También buscamos si el término coincide con algún productCode de sus variantes
-          product.variants?.some((v) =>
-            v.productCode.toLowerCase().includes(term)
-          )
-        : true;
+  // --- LÓGICA DE BÚSQUEDA PROFUNDA (CORREGIDA) ---
+  const filteredResults = useMemo(() => {
+    if (!searchQuery) return [];
+    const term = normalizeText(searchQuery);
 
-      const matchesCategory =
-        activeCategory === "Todos" || product.categories === activeCategory;
+    return productsData.filter((p) => {
+      // 1. Match en datos principales
+      const matchMain =
+        normalizeText(p.name).includes(term) ||
+        normalizeText(p.description).includes(term) ||
+        normalizeText(p.generalCode).includes(term) ||
+        (p.productCode && normalizeText(p.productCode).includes(term));
 
-      return matchesSearch && matchesCategory;
+      // 2. Match en Variantes (Curetas rígidas, talles de guantes, etc.)
+      const matchVariants = p.variants?.some(
+        (v) =>
+          normalizeText(v.variant).includes(term) ||
+          normalizeText(v.productCode).includes(term)
+      );
+
+      // 3. Match en Tags (Palabras clave extra)
+      const matchTags = p.tags?.some((tag) => normalizeText(tag).includes(term));
+
+      return matchMain || matchVariants || matchTags;
     });
-  }, [searchQuery, activeCategory]);
+  }, [searchQuery, productsData]);
+
+  // --- LÓGICA DE MAPEOS ---
+  const categoriesMap = useMemo(() => {
+    if (searchQuery) return {};
+    const groups = {};
+    productsData.forEach((p) => {
+      const cat = p.categories || "Otros";
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(p);
+    });
+    return groups;
+  }, [searchQuery, productsData]);
+
+  const specialtiesMap = useMemo(() => {
+    if (searchQuery) return {};
+    const groups = {};
+    productsData.forEach((p) => {
+      if (p.professionalAreas) {
+        const areas = p.professionalAreas.split(",").map((a) => a.trim());
+        areas.forEach((area) => {
+          if (area === "General") return;
+          if (!groups[area]) groups[area] = [];
+          groups[area].push(p);
+        });
+      }
+    });
+    return groups;
+  }, [searchQuery, productsData]);
+
+  const getCategoryLink = (name) => `/products/${toSlug(name)}`;
+
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
-      <header className="mb-6 flex flex-col items-center justify-center  text-center">
-        {/* Bloque de Títulos */}
-        <div className="flex flex-col items-center">
-          {searchQuery ? (
-            <>
-              {/* Etiqueta con líneas simétricas */}
-              <div className="flex items-center justify-center gap-3 text-thalys-red font-bold text-xs uppercase tracking-[0.2em] mb-3">
-                <span className="w-8 h-1px bg-thalys-red opacity-30"></span>
-                <span className="shrink-0">Resultados de búsqueda</span>
-                <span className="w-8 h-1px bg-thalys-red opacity-30"></span>
-              </div>
+    <main className="max-w-7xl mx-auto py-6 lg:py-16">
+      {!searchQuery && (
+        <header className="mb-8 flex flex-col items-center justify-center text-center">
+          <h1 className="text-4xl lg:text-5xl font-poppins font-bold text-thalys-blue">
+            Nuestros <span className="text-thalys-red">Productos</span>
+          </h1>
 
-              <h1 className="text-4xl lg:text-5xl font-poppins font-bold text-thalys-blue max-w-3xl">
-                Explorando{" "}
-                <span className="text-thalys-red">"{searchQuery}"</span>
-              </h1>
-            </>
-          ) : (
-            <>
-              <h1 className="text-4xl lg:text-5xl font-poppins font-bold text-thalys-blue">
-                Catálogo <span className="text-thalys-red">Premium</span>
-              </h1>
-              <p className="text-gray-500 font-light mt-3 max-w-xl mx-auto">
-                Equipamiento de alta precisión para clínicas y laboratorios.
-              </p>
-            </>
-          )}
-        </div>
-
-        {/* Botón de Compartir Centrado */}
-        {searchQuery && (
-          <div className=" animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <ShareButton
-              title={`Resultados para "${searchQuery}" | Thalys`}
-              text={`Doctor, le comparto estos insumos de Thalys para: ${searchQuery}`}
-            />
+          {/* CONTADOR MINIMALISTA */}
+          <div className="mt-3 flex items-center justify-center text-gray-500 font-medium bg-gray-50 px-4 py-1.5 rounded-full border border-gray-100">
+            <p className="text-xs font-medium uppercase tracking-wide">
+              {totalProducts} productos disponibles
+            </p>
           </div>
-        )}
-      </header>
+        </header>
+      )}
 
-      <ProductFilters
-        activeCategory={activeCategory}
-        setActiveCategory={(cat) => {
-          window.location.href = `/products?category=${cat}${
-            searchQuery ? `&q=${searchQuery}` : ""
-          }`;
-        }}
-      />
-
-      {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6">
-          {filteredProducts.map((product) => (
-            <Link
-              href={`/products/${product.defaultSlug || product.slug}`}
-              key={product.generalCode}
-              className="block hover:scale-[1.02] transition-transform duration-300"
-            >
-              <ProductCard
-                product={{
-                  ...product,
-                  image: `${THALYS_IMAGES_URL}${
-                    Array.isArray(product.image)
-                      ? product.image[0]
-                      : product.image
-                  }`,
-                  name: product.name,
-                }}
-              />
-            </Link>
-          ))}
-        </div>
+      {searchQuery ? (
+        <SearchResults
+          results={filteredResults}
+          searchQuery={searchQuery}
+          activeCategory="Todos"
+        />
       ) : (
-        <div className="text-center py-32 bg-gray-50 rounded-[3rem] border border-dashed border-gray-200 mt-12">
-          <h3 className="text-xl font-bold text-thalys-blue mb-2">
-            Sin coincidencias
-          </h3>
-          <p className="text-gray-400 mb-8 px-4 font-light">
-            No encontramos resultados para "{searchQuery}"{" "}
-            {activeCategory !== "Todos" && `en ${activeCategory}`}.
-          </p>
-          <Link
-            href="/products"
-            className="inline-block px-8 py-3 bg-thalys-blue text-white rounded-full font-bold active:scale-95 transition-all shadow-lg shadow-thalys-blue/20"
+        <div className="space-y-4 animate-fadeIn">
+          {/* SECCIÓN ESPECIALIDADES */}
+          <AccordionSection
+            title="Explorar por Especialidad"
+            subtitle="Instrumental específico para tu práctica."
+            isOpen={openSection === "especialidades"}
+            onToggle={() =>
+              setOpenSection(
+                openSection === "especialidades" ? null : "especialidades"
+              )
+            }
           >
-            Limpiar filtros
-          </Link>
+            <div className="bg-gray-50 space-y-4">
+              {Object.entries(specialtiesMap).map(([name, products]) => (
+                <ProductsCarousel
+                  key={name}
+                  products={products}
+                  title={name}
+                  viewAllLink={getCategoryLink(name)}
+                  pathPrefix={toSlug(name)}
+                />
+              ))}
+            </div>
+          </AccordionSection>
+
+          {/* SECCIÓN CATEGORÍAS */}
+          <AccordionSection
+            title="Tipos de Productos"
+            subtitle="Catálogo organizado por categorías técnicas."
+            isOpen={openSection === "productos"}
+            onToggle={() =>
+              setOpenSection(openSection === "productos" ? null : "productos")
+            }
+          >
+            <div className="space-y-4">
+              {Object.entries(categoriesMap).map(([name, products]) => (
+                <ProductsCarousel
+                  key={name}
+                  products={products}
+                  title={name}
+                  viewAllLink={getCategoryLink(name)}
+                  pathPrefix={null}
+                />
+              ))}
+            </div>
+          </AccordionSection>
         </div>
       )}
     </main>

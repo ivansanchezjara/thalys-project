@@ -1,13 +1,37 @@
-"use client";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { ProductCard } from "@/components/products/ProductsCard";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
 import ShareButton from "@/components/ui/ShareButton";
 import { SearchX } from "lucide-react";
+import { PaginationInfo, PaginationControls } from "@/components/ui/Pagination";
+import { toSlug } from "@/utils/textHelpers";
+
+const ITEMS_PER_PAGE = 24;
 
 export function SearchResults({ results, searchQuery, activeCategory }) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Reset page when results/query change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [results, searchQuery]);
+
+  const totalItems = results.length;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalItems);
+  const paginatedResults = results.slice(startIndex, endIndex);
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="animate-in fade-in duration-500">
+    <div className="mx-auto px-6 animate-in fade-in duration-500">
       {/* Header con formato de Thalys */}
       <header className="mb-6 flex flex-col items-center justify-center text-center">
         <div className="flex flex-col items-center">
@@ -32,27 +56,42 @@ export function SearchResults({ results, searchQuery, activeCategory }) {
 
       {/* Lógica de renderizado con tu formato exacto */}
       {results.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6">
-          {results.map((product) => (
-            <Link
-              href={`/products/${product.defaultSlug || product.slug}`}
-              key={product.generalCode}
-              className="block hover:scale-[1.02] transition-transform duration-300"
-            >
-              <ProductCard
-                product={{
-                  ...product,
-                  image: `${THALYS_IMAGES_URL}${
-                    Array.isArray(product.image)
+        <>
+          <PaginationInfo
+            currentPage={currentPage}
+            itemsPerPage={ITEMS_PER_PAGE}
+            totalItems={totalItems}
+            label="resultados"
+          />
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6 mb-12">
+            {paginatedResults.map((product) => (
+              <Link
+                href={`/products/${toSlug(product.categories)}/${toSlug(product.subCategory)}/${product.slug}`}
+                key={product.generalCode}
+                className="block hover:scale-[1.02] transition-transform duration-300"
+              >
+                <ProductCard
+                  product={{
+                    ...product,
+                    image: `${THALYS_IMAGES_URL}${Array.isArray(product.image)
                       ? product.image[0]
                       : product.image
-                  }`,
-                  name: product.name,
-                }}
-              />
-            </Link>
-          ))}
-        </div>
+                      }`,
+                    name: product.name,
+                  }}
+                />
+              </Link>
+            ))}
+          </div>
+
+          {/* PAGINATION CONTROLS */}
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        </>
       ) : (
         <div className="text-center py-32 bg-gray-50/50 rounded-[4rem] border-2 border-dashed border-gray-200 mt-12 flex flex-col items-center">
           {/* Elemento Visual: Un icono sutil que refuerza el mensaje */}

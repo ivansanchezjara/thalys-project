@@ -85,3 +85,17 @@
     @apply text-thalys-red border-thalys-red;
   }
 }
+
+.custom-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #d1d5db;
+  opacity: 1;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  width: 25px;
+  background: #a92130 !important;
+}

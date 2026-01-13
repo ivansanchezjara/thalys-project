@@ -6,12 +6,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { ProductCard } from "@/components/products/ProductsCard";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
+import { toSlug } from "@/utils/textHelpers";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function ProductsCarousel({ products, title = "Destacados" }) {
+export default function ProductsCarousel({
+  products,
+  title = "Destacados",
+  viewAllLink,
+  pathPrefix = null,
+}) {
   const uniqueId = useId().replace(/:/g, "");
   const prevId = `prev-${uniqueId}`;
   const nextId = `next-${uniqueId}`;
@@ -19,135 +25,89 @@ export default function ProductsCarousel({ products, title = "Destacados" }) {
 
   const limitedProducts = products.slice(0, 10);
   const hasMore = products.length > 10;
-
-  // Función para crear la URL limpia: "Instrumental Estético" -> "/products/instrumental-estetico"
-  const categorySlug = title
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // Quita tildes
-    .replace(/\s+/g, "-"); // Cambia espacios por guiones
-
-  const dynamicViewAllLink = `/products/${categorySlug}`;
+  const dynamicLink = viewAllLink || `/products/${toSlug(title)}`;
 
   return (
-    <section className="py-4 bg-gray-50/50">
-      <div className="mx-auto px-6">
-        {/* CABECERA SIMPLIFICADA */}
-        <div className="flex flex-row justify-between items-center mb-6 gap-4">
+    <section className="pt-4 relative group/carousel">
+      <div className="mx-auto px-4">
+        <div className="flex flex-row items-baseline mb-4 gap-4">
+          <h2 className="text-xl md:text-2xl text-thalys-blue leading-tight tracking-tight">
+            {title}
+          </h2>
           <Link
-            href={dynamicViewAllLink}
-            className="group text-left flex-1 min-w-0"
+            href={dynamicLink}
+            className="group flex items-center gap-0.5 font-semibold text-xs md:text-sm text-thalys-red hover:underline mb-0.5"
           >
-            <div className="inline-block relative">
-              <div className="flex items-center">
-                <h2 className="text-xl md:text-2xl font-bold text-thalys-blue leading-tight tracking-tight pr-4 transition-colors group-hover:text-thalys-red">
-                  {title}
-                </h2>
-                <div className="md:hidden text-thalys-red opacity-50 group-hover:opacity-100 transition-all group-hover:translate-x-1">
-                  <ArrowRight size={24} />
-                </div>
-              </div>
-              <span className="absolute -bottom-2 left-0 w-0 h-1 bg-thalys-red transition-all duration-300 group-hover:w-full"></span>
-            </div>
+            Ver más productos
+            <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
           </Link>
-
-          {/* CONTROLES SIEMPRE VISIBLES */}
-          <div className="flex items-center gap-2 shrink-0">
-            <button
-              id={prevId}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center bg-white hover:bg-thalys-blue hover:text-white transition-all shadow-sm cursor-pointer disabled:opacity-20 disabled:cursor-auto"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              id={nextId}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center bg-white hover:bg-thalys-blue hover:text-white transition-all shadow-sm cursor-pointer disabled:opacity-20 disabled:cursor-auto"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
         </div>
 
-        {/* CONTENIDO DEL CARRUSEL */}
-        <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={16}
-          slidesPerView={1.4}
-          navigation={{
-            prevEl: `#${prevId}`,
-            nextEl: `#${nextId}`,
-          }}
-          pagination={{
-            clickable: true,
-            el: `#${paginationId}`,
-          }}
-          breakpoints={{
-            480: { slidesPerView: 2.2 },
-            768: { slidesPerView: 4 },
-            1024: { slidesPerView: 5 },
-          }}
-          className="overflow-visible!"
-        >
-          {limitedProducts.map((product) => (
-            <SwiperSlide key={product.generalCode}>
-              <Link
-                href={`/products/${product.defaultSlug || product.slug}`}
-                className="block hover:scale-[1.02] transition-transform duration-300 pb-4"
-              >
-                <ProductCard
-                  product={{
-                    ...product,
-                    image: `${THALYS_IMAGES_URL}${
-                      Array.isArray(product.image)
-                        ? product.image[0]
-                        : product.image
-                    }`,
-                  }}
-                />
-              </Link>
-            </SwiperSlide>
-          ))}
+        <div className="relative">
+          <button id={prevId} className="hidden md:flex absolute top-1/2 -left-4 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 text-thalys-blue hover:bg-thalys-blue hover:text-white items-center justify-center transition-all opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0 cursor-pointer">
+            <ChevronLeft size={20} />
+          </button>
+          <button id={nextId} className="hidden md:flex absolute top-1/2 -right-4 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-gray-100 text-thalys-blue hover:bg-thalys-blue hover:text-white items-center justify-center transition-all opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0 cursor-pointer">
+            <ChevronRight size={20} />
+          </button>
 
-          {hasMore && (
-            <SwiperSlide>
-              <Link
-                href={dynamicViewAllLink}
-                className="flex flex-col items-center justify-center h-full min-h-[300px] bg-white rounded-3xl border-2 border-dashed border-gray-200 hover:border-thalys-red hover:bg-thalys-red/5 transition-all group"
-              >
-                <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 group-hover:bg-thalys-red group-hover:text-white transition-colors">
-                  <Plus size={32} />
-                </div>
-                <span className="font-bold text-thalys-blue group-hover:text-thalys-red transition-colors text-center px-4">
-                  Ver más {title}
-                </span>
-                <span className="text-sm text-gray-400 mt-1 font-medium">
-                  +{products.length - 10} productos
-                </span>
-              </Link>
-            </SwiperSlide>
-          )}
-        </Swiper>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={16}
+            slidesPerView={2}
+            slidesPerGroup={2}
+            navigation={{ prevEl: `#${prevId}`, nextEl: `#${nextId}` }}
+            pagination={{ clickable: true, el: `#${paginationId}` }}
+            breakpoints={{
+              480: { slidesPerView: 2.2, slidesPerGroup: 2 },
+              768: { slidesPerView: 4, slidesPerGroup: 4 },
+              1024: { slidesPerView: 5, slidesPerGroup: 5 },
+            }}
+            className="px-1 py-4"
+          >
+            {limitedProducts.map((product) => {
+              let productHref;
+              const subCat = toSlug(product.subCategory || "general");
 
-        <div
-          id={paginationId}
-          className="custom-pagination flex justify-center gap-2 mt-4"
-        ></div>
+              // LÓGICA CORREGIDA:
+              if (pathPrefix) {
+                // Generamos 4 niveles: /products/cirugia/bisturi/slug
+                // Esto asegura que el breadcrumb tenga "Cirugía" y "Bisturí"
+                productHref = `/products/${pathPrefix}/${subCat}/${product.slug}`;
+              } else {
+                // Ruta Jerárquica: /products/instrumentales/bisturi/slug
+                const cat = toSlug(product.categories || "otros");
+                productHref = `/products/${cat}/${subCat}/${product.slug}`;
+              }
+
+              return (
+                <SwiperSlide key={product.generalCode}>
+                  <Link href={productHref} className="block hover:scale-[1.02] transition-transform duration-300 pb-2">
+                    <ProductCard
+                      product={{
+                        ...product,
+                        image: `${THALYS_IMAGES_URL}${Array.isArray(product.image) ? product.image[0] : product.image}`,
+                      }}
+                    />
+                  </Link>
+                </SwiperSlide>
+              );
+            })}
+
+            {hasMore && (
+              <SwiperSlide>
+                <Link href={dynamicLink} className="flex flex-col items-center justify-center h-full min-h-[200px] bg-white rounded-2xl border-2 border-dashed border-gray-200 hover:border-thalys-red hover:bg-thalys-red/5 transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mb-3 group-hover:bg-thalys-red group-hover:text-white transition-colors">
+                    <Plus size={24} />
+                  </div>
+                  <span className="font-bold text-sm text-thalys-blue group-hover:text-thalys-red transition-colors text-center px-4">Ver más</span>
+                </Link>
+              </SwiperSlide>
+            )}
+          </Swiper>
+        </div>
+        <div id={paginationId} className="custom-pagination flex justify-center gap-2 mt-4"></div>
       </div>
-
-      <style jsx global>{`
-        .custom-pagination .swiper-pagination-bullet {
-          width: 10px;
-          height: 10px;
-          background: #d1d5db;
-          opacity: 1;
-          transition: all 0.3s ease;
-          border-radius: 5px;
-        }
-        .custom-pagination .swiper-pagination-bullet-active {
-          width: 30px;
-          background: #a92130 !important;
-        }
-      `}</style>
     </section>
   );
 }

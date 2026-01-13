@@ -1,13 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Star, ShieldCheck, Truck } from "lucide-react";
-import { ProductCard } from "@/components/products/ProductsCard";
-import { THALYS_IMAGES_URL } from "@/assets/constants";
-import productsData from "@/assets/THALYS.json";
+import { getFeaturedProducts } from "@/lib/productsData";
 import ProductsCarousel from "@/components/ui/ProductsCarousel";
 
 export default function Home() {
-  const featuredProducts = productsData.filter((product) => product.featured);
+  const featuredProducts = getFeaturedProducts();
   return (
     <div className="flex flex-col w-full">
       {/* 1. SECCIÓN HERO: El primer impacto */}
@@ -61,7 +59,7 @@ export default function Home() {
           {/* Contenedor del Logo con brillo */}
           <div className="flex-1 flex justify-center relative">
             {/* Brillo decorativo detrás del logo */}
-            <div className="absolute inset-0 bg-thalys-red/10 blur-[100px] rounded-full" />
+            <div className="absolute inset-0 blur-[100px] rounded-full" />
 
             <div className="relative w-full max-w-sm aspect-square bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl flex items-center justify-center p-12 overflow-hidden border border-white">
               <Image
@@ -121,8 +119,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. NUEVA SECCIÓN: PRODUCTOS DESTACADOS */}
-      <ProductsCarousel products={featuredProducts} />
+      {/* 3. PRODUCTOS DESTACADOS */}
+      <section className="bg-white py-6 lg:py-16">
+        <div className="max-w-7xl mx-auto">
+          <ProductsCarousel products={featuredProducts} title="Destacados" />
+        </div>
+      </section>
     </div>
   );
 }
