@@ -33,26 +33,31 @@ export async function generateMetadata({ params }) {
   // 2. LÓGICA DE CATEGORÍA / SUBCATEGORÍA
   const categoryConfig = getCategoryConfig(segments[0]);
   if (categoryConfig) {
-    let title = categoryConfig.title;
-    let description = categoryConfig.description;
+    // Priorizamos los datos dentro de 'metadata' si existen, si no usamos los de nivel superior
+    let title = categoryConfig.metadata?.title || categoryConfig.title;
+    let description = categoryConfig.metadata?.description || categoryConfig.description;
 
     if (segments.length === 2) {
-      // Es una subcategoría, intentamos obtener el nombre real de los productos
-      const allProducts = categoryConfig.isSpecial ? getFeaturedProducts() : getProductsByCategory(categoryConfig.name);
+      // Es una subcategoría: buscamos el nombre real
+      const allProducts = categoryConfig.isSpecial
+        ? getFeaturedProducts()
+        : getProductsByCategory(categoryConfig.name);
+
       const subProduct = allProducts.find(p => toSlug(p.subCategory) === segments[1]);
+
       if (subProduct) {
-        title = subProduct.subCategory;
-        description = `Explora nuestra línea de ${title} en Thalys.`;
+        title = `${subProduct.subCategory} | Thalys`;
+        description = `Explora nuestra línea de ${subProduct.subCategory} en Thalys.`;
       }
     }
 
     return {
-      title: title,
+      title: title, // Aquí ya es un String, no un Objeto
       description: description,
       openGraph: {
-        title: `${title} | Thalys`,
+        title: title,
         description: description,
-        images: ["/logo_Thalys.png"], // O una imagen por categoría si tienes
+        images: ["/logo_Thalys.png"],
       }
     };
   }
