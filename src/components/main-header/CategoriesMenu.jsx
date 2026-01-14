@@ -140,7 +140,7 @@ export default function CategoriesMenu({ mobile = false, onItemClick, productsDa
                                         className={`text-gray-300 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
                                     />
                                 </button>
-                                <div className={`overflow-hidden transition-all duration-300 bg-gray-50 ${isExpanded ? "max-h-[800px]" : "max-h-0"}`}>
+                                <div className={`overflow-hidden transition-all duration-300 bg-gray-50 ${isExpanded ? "max-h-[2500px]" : "max-h-0"}`}>
                                     <ul className="pl-12 pr-4 py-2 space-y-1">
                                         {cat.subs.map((sub) => (
                                             <li key={sub}>
