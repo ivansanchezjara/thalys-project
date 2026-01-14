@@ -4,13 +4,13 @@ import { useSearchParams } from "next/navigation";
 import ProductsCarousel from "@/components/ui/ProductsCarousel";
 import { SearchResults } from "./SearchResults";
 import { AccordionSection } from "@/components/products/AccordionSection";
-import { getProducts } from "@/lib/productsData";
 import { normalizeText, toSlug } from "@/utils/textHelpers";
 
-export default function ProductsContent() {
+export default function ProductsContent({ initialProducts = [] }) {
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get("q") || "";
-  const productsData = getProducts();
+
+  const productsData = initialProducts;
   const totalProducts = productsData.length;
 
   const [openSection, setOpenSection] = useState("especialidades");

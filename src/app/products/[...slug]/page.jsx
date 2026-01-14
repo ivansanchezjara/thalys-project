@@ -1,4 +1,4 @@
-import { findProductAndVariant, getProductsByCategory, getFeaturedProducts, getProducts } from "@/lib/productsData";
+import { findProductAndVariant, getProductsByCategory, getFeaturedProducts } from "@/lib/productsData";
 import { notFound } from "next/navigation";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
 import { getCategoryConfig } from "@/config/categories";
@@ -13,8 +13,8 @@ export async function generateMetadata({ params }) {
   const segments = Array.isArray(slug) ? slug : [slug];
   const lastSegment = segments[segments.length - 1];
 
+  // 1. LÓGICA DE PRODUCTO
   const { product, selectedVariant } = findProductAndVariant(lastSegment);
-
   if (product) {
     const displayName = selectedVariant
       ? `${product.name} (${selectedVariant.variant})`
@@ -22,14 +22,65 @@ export async function generateMetadata({ params }) {
     const mainImg = Array.isArray(product.image) ? product.image[0] : product.image;
 
     return {
-      title: `${displayName} | Thalys`,
+      title: `${displayName}`,
       description: product.longDescription,
       openGraph: {
         images: [{ url: `${THALYS_IMAGES_URL}${mainImg}` }],
       },
     };
   }
-  return { title: "Productos | Thalys" };
+
+  // 2. LÓGICA DE CATEGORÍA / SUBCATEGORÍA
+  const categoryConfig = getCategoryConfig(segments[0]);
+  if (categoryConfig) {
+    let title = categoryConfig.title;
+    let description = categoryConfig.description;
+
+    if (segments.length === 2) {
+      // Es una subcategoría, intentamos obtener el nombre real de los productos
+      const allProducts = categoryConfig.isSpecial ? getFeaturedProducts() : getProductsByCategory(categoryConfig.name);
+      const subProduct = allProducts.find(p => toSlug(p.subCategory) === segments[1]);
+      if (subProduct) {
+        title = subProduct.subCategory;
+        description = `Explora nuestra línea de ${title} en Thalys.`;
+      }
+    }
+
+    return {
+      title: title,
+      description: description,
+      openGraph: {
+        title: `${title} | Thalys`,
+        description: description,
+        images: ["/logo_Thalys.png"], // O una imagen por categoría si tienes
+      }
+    };
+  }
+
+  // 3. LÓGICA DE ESPECIALIDAD (Área Profesional)
+  const { getProfessionalAreas } = await import("@/lib/productsData");
+  const specialties = getProfessionalAreas();
+  const specialtyName = specialties.find(s => toSlug(s) === segments[0]);
+
+  if (specialtyName) {
+    let title = specialtyName;
+    if (segments.length >= 2) {
+      // Lógica similar para subcategoría dentro de especialidad
+      title = `Productos para ${specialtyName}`;
+    }
+
+    return {
+      title: title,
+      description: `Productos para ${specialtyName}.`,
+      openGraph: {
+        title: `${title} | Thalys`,
+        images: ["/logo_Thalys.png"],
+      }
+    };
+  }
+
+  // Fallback por defecto
+  return { title: "Catálogo de Productos" };
 }
 
 // --- PÁGINA PRINCIPAL ---
@@ -73,12 +124,11 @@ export default async function ProductPage({ params }) {
 
     return (
       <CategoryTemplate
-        categoryName={categoryConfig.name}
         categorySlug={segments[0]}
         subCategorySlug={segments[1] || null}
         title={title}
         description={description}
-        initialProducts={initialProducts}
+        productsData={initialProducts}
       />
     );
   }
@@ -109,7 +159,7 @@ export default async function ProductPage({ params }) {
         subCategorySlug={segments[1] || null}
         title={title}
         description={`Instrumental especializado para ${specialtyName}.`}
-        initialProducts={initialProducts}
+        productsData={initialProducts}
       />
     );
   }

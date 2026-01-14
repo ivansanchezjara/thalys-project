@@ -10,7 +10,7 @@ import logoImg from "../../../public/logo_Thalys.png";
 import { useCart } from "@/app/context/CartContext";
 import CategoriesMenu from "./CategoriesMenu"; // <--- 1. Importamos el componente
 
-export default function MainHeader() {
+export default function MainHeader({ productsData }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const { cartCount, openCart } = useCart();
@@ -21,7 +21,9 @@ export default function MainHeader() {
 
   const navLinks = [
     { name: "Productos", href: "/products" },
+    { name: "Descargas", href: "/downloads" },
     { name: "Sobre Nosotros", href: "/about" },
+
   ];
 
   return (
@@ -46,7 +48,7 @@ export default function MainHeader() {
         <nav className="hidden md:flex items-center gap-8 text-gray-600 self-stretch">
 
           {/* 2. AÑADIMOS EL MENÚ DE CATEGORÍAS AQUÍ */}
-          <CategoriesMenu />
+          <CategoriesMenu productsData={productsData} />
 
           {/* Mapeamos el resto de links, excluyendo "Productos" porque ya está en el menú */}
           {navLinks.filter(link => link.name !== "Productos").map((link) => (
@@ -64,7 +66,6 @@ export default function MainHeader() {
           ))}
         </nav>
 
-        {/* Buscador - Sin tocar sus classNames internos */}
         <SearchBar />
 
         {/* Contenedor de Iconos (Carrito visible en todo, Menu solo Mobile) */}
@@ -111,7 +112,7 @@ export default function MainHeader() {
         <div className="flex flex-col gap-2 p-4 pb-6">
 
           {/* 3. AÑADIMOS EL MENÚ MÓVIL AQUÍ */}
-          <CategoriesMenu mobile={true} onItemClick={() => setMobileOpen(false)} />
+          <CategoriesMenu mobile={true} onItemClick={() => setMobileOpen(false)} productsData={productsData} />
 
           {/* Mapeamos el resto de links, excluyendo "Productos" */}
           {navLinks.filter(link => link.name !== "Productos").map((link) => (

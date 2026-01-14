@@ -2,13 +2,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronRight, Home } from "lucide-react";
-import { getProducts } from "@/lib/productsData";
 import { CATEGORIES } from "@/config/categories";
 import { toSlug } from "@/utils/textHelpers";
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs({ productsData }) {
   const pathname = usePathname();
-  const productsData = getProducts();
 
   // Si estamos en la home, no mostramos breadcrumbs
   if (pathname === "/") return null;

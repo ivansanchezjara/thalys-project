@@ -45,7 +45,7 @@ export default function Home() {
                 href="/products"
                 className="bg-gray-900 text-white px-8 py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all active:scale-95 shadow-lg shadow-gray-200"
               >
-                Ver Catálogo <ArrowRight size={18} />
+                Ver Productos <ArrowRight size={18} />
               </Link>
               <Link
                 href="/about"

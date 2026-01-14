@@ -4,8 +4,12 @@ import MainHeader from "@/components/main-header/main-header";
 import SideCart from "@/components/cart/SideCart";
 import { CartProvider } from "./context/CartContext";
 import Breadcrumbs from "@/components/ui/BreadCrumbs";
+import { getProducts } from "@/lib/productsData";
 
 export const metadata = {
+
+  metadataBase: new URL("https://main.dnxy71hbjzz8y.amplifyapp.com/"),
+
   title: {
     template: "%s | Thalys",
     default: "Thalys | Insumos Odontológicos",
@@ -16,17 +20,22 @@ export const metadata = {
     title: "Thalys | Insumos Odontológicos",
     description: "Calidad premium para tu clínica.",
     images: ["/logo_Thalys.png"],
+    type: "website",
+    locale: "es_PY",
   },
 };
 
 export default function RootLayout({ children }) {
+
+  const productsData = getProducts();
+
   return (
     <html lang="es">
       <body className="antialiased scroll-smooth" suppressHydrationWarning>
         <CartProvider>
           <SideCart />
-          <MainHeader />
-          <Breadcrumbs />
+          <MainHeader productsData={productsData} />
+          <Breadcrumbs productsData={productsData} />
           <main className="min-h-screen">{children}</main>
           <Footer />
         </CartProvider>

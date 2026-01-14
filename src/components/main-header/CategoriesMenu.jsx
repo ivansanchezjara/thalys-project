@@ -6,14 +6,12 @@ import {
     Grip, ShieldCheck, Scissors, Armchair,
     Syringe, Box, ScanFace, Monitor, BriefcaseMedical
 } from "lucide-react";
-import { getProducts } from "@/lib/productsData";
 import { toSlug } from "@/utils/textHelpers";
 
-export default function CategoriesMenu({ mobile = false, onItemClick }) {
+export default function CategoriesMenu({ mobile = false, onItemClick, productsData }) {
     const [isOpen, setIsOpen] = useState(false);
     const [activeAccordion, setActiveAccordion] = useState(null);
     const menuRef = useRef(null);
-    const productsData = getProducts();
 
     // Cerrar al hacer click fuera (Desktop)
     useEffect(() => {

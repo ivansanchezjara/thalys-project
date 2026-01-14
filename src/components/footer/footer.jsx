@@ -37,6 +37,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/downloads" className="hover:text-thalys-gold">
+                Descargas
+              </Link>
+            </li>
+            <li>
               <Link href="/about" className="hover:text-thalys-gold">
                 Sobre Thalys
               </Link>

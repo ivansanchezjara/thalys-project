@@ -1,27 +1,35 @@
 import { Suspense } from "react";
 import ProductsContent from "./ProductsContent";
+import { getProducts } from "@/lib/productsData";
 
 export async function generateMetadata({ searchParams }) {
   // Safe handling for Next.js 13/14/15 compatibility
-  const params = await searchParams; // In Next.js 15 this is required
+  const params = await searchParams;
   const query = params?.q;
 
   if (query) {
     return {
-      title: `Resultados para "${query}" | Thalys`,
-      description: `Mirá el instrumental de alta precisión que encontramos para "${query}" en el catálogo de Thalys.`,
+      title: `Resultados para "${query}"`,
+      description: `Mirá los productos que encontramos para "${query}" en el catálogo de Thalys.`,
+      openGraph: {
+        images: ["/logo_Thalys.png"],
+      }
     };
   }
 
   return {
-    title: "Productos | Thalys Insumos Odontológicos",
+    title: "Catálogo de Productos",
     description:
-      "Explora nuestros insumos odontológicos de alta precisión. Calidad premium para clínicas.",
+      "Explora nuestros productos. Calidad premium para tu clínica.",
+    openGraph: {
+      images: ["/logo_Thalys.png"],
+    },
   };
 }
 
 // --- COMPONENTE PRINCIPAL (Server Component) ---
 export default function ProductsPage() {
+  const productsData = getProducts();
   return (
     <Suspense
       fallback={
@@ -33,7 +41,7 @@ export default function ProductsPage() {
         </div>
       }
     >
-      <ProductsContent />
+      <ProductsContent initialProducts={productsData} />
     </Suspense>
   );
 }

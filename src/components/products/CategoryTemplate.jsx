@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ProductCard } from "@/components/products/ProductsCard";
 import ProductsFilters from "@/components/products/ProductsFilters";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
-import { getProductsByCategory } from "@/lib/productsData";
 import { PaginationInfo, PaginationControls } from "@/components/ui/Pagination";
 import { useProductFilters } from "@/hooks/useProductFilters";
 import { useMemo } from "react";
@@ -12,20 +11,12 @@ import { toSlug } from "@/utils/textHelpers";
 const ITEMS_PER_PAGE = 24;
 
 export default function CategoryTemplate({
-  categoryName,
   categorySlug,
-  subCategorySlug,
   title,
   description,
-  initialProducts,
+  productsData = [],
 }) {
-  // LÓGICA: Si vienen productos iniciales (ej: Destacados), los usamos.
-  // Si no, filtramos el JSON por el nombre exacto de la categoría.
-  const categoryProducts = initialProducts
-    ? initialProducts
-    : getProductsByCategory(categoryName);
 
-  // Hook de filtros (encapsula toda la lógica de filtrado)
   const {
     activeSubCategory,
     activeArea,
@@ -40,7 +31,7 @@ export default function CategoryTemplate({
     setActiveArea,
     handleAttributeChange,
     clearAllFilters,
-  } = useProductFilters(categoryProducts);
+  } = useProductFilters(productsData);
 
   // --- PAGINACIÓN ---
   const totalItems = filteredProducts.length;
