@@ -18,7 +18,7 @@ export const metadata = {
     "Equipamiento y herramientas de alta precisión para profesionales de la salud dental en Paraguay.",
   openGraph: {
     title: "Thalys | Insumos Odontológicos",
-    description: "Calidad premium para tu clínica.",
+    description: "Precisión que inspira confianza clínica.",
     images: ["/logo_Thalys.png"],
     type: "website",
     locale: "es_PY",

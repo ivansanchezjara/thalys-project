@@ -158,7 +158,7 @@ export default async function ProductPage({ params }) {
         categorySlug={segments[0]}
         subCategorySlug={segments[1] || null}
         title={title}
-        description={`Instrumental especializado para ${specialtyName}.`}
+        description={`Productos especializados para ${specialtyName}.`}
         productsData={initialProducts}
       />
     );

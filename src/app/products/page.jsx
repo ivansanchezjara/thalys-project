@@ -20,7 +20,7 @@ export async function generateMetadata({ searchParams }) {
   return {
     title: "Catálogo de Productos",
     description:
-      "Explora nuestros productos. Calidad premium para tu clínica.",
+      "Explora todos nuestros productos. Eleva tu clínica al siguiente nivel.",
     openGraph: {
       images: ["/logo_Thalys.png"],
     },

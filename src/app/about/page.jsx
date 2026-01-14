@@ -2,6 +2,12 @@ import Image from "next/image";
 import { ShieldCheck, Wrench, Users, Target, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Sobre Nosotros | Thalys - Innovación Odontológica",
+  description: "Descubre la filosofía de Thalys. Ofrecemos Precisión en insumos odontológicos que inspira confianza clínica.",
+  keywords: ["odontología", "insumos dentales", "Thalys", "instrumental médico", "precisión clínica"],
+};
+
 const VALUES = [
   {
     icon: ShieldCheck,

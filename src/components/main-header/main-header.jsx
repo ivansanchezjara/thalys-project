@@ -1,5 +1,4 @@
 "use client";
-
 import SearchBar from "./SearchBar";
 import { useState, useEffect } from "react";
 import Link from "next/link";

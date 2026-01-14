@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 
 export const metadata = {
     title: "Catálogos y Descargas",
-    description: "Descarga nuestros catálogos completos de instrumental, rotatorios y equipos en PDF.",
+    description: "Descarga nuestros catálogos completos de instrumental, rotatorios e insumos en PDF.",
     openGraph: {
         title: "Catálogos Thalys | Descargas",
         description: "Accede a la lista completa de precios y productos.",

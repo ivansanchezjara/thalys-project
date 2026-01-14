@@ -6,12 +6,12 @@
 export const CATEGORIES = {
   instrumentales: {
     name: "Instrumentales",
-    title: "Instrumentales Premium",
-    description: "Precisión absoluta en acero inoxidable de grado quirúrgico.",
+    title: "Instrumentales",
+    description: "Precisión absoluta en materiales de grado quirúrgico.",
     metadata: {
       title: "Instrumentales Odontológicos | Thalys",
       description:
-        "Explora nuestra gama de fórceps, elevadores y todo el instrumental de acero quirúrgico.",
+        "Explora nuestra gama de fórceps, elevadores y todo sobre instrumentales.",
     },
   },
   bioseguridad: {
@@ -26,11 +26,7 @@ export const CATEGORIES = {
   },
   destacados: {
     name: "Destacados",
-    title: (
-      <>
-        Novedades <span className="text-thalys-red">Thalys</span>
-      </>
-    ),
+    title: "Productos Destacados",
     description:
       "Descubre los productos más nuevos y destacados de nuestro catálogo.",
     metadata: {
