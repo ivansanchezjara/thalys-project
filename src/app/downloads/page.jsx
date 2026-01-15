@@ -1,5 +1,3 @@
-import React from "react";
-import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
 export const metadata = {
@@ -8,7 +6,7 @@ export const metadata = {
     openGraph: {
         title: "Catálogos Thalys | Descargas",
         description: "Accede a la lista completa de precios y productos.",
-        images: ["/logo_Thalys.png"],
+        images: ["/logo_Thalys_OP.jpg"],
     },
 };
 

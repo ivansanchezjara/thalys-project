@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: "Thalys | Insumos Odontológicos",
     description: "Precisión que inspira confianza clínica.",
-    images: ["/logo_Thalys.png"],
+    images: ["/logo_Thalys_OP.jpg"],
     type: "website",
     locale: "es_PY",
   },

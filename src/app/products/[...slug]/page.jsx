@@ -57,7 +57,7 @@ export async function generateMetadata({ params }) {
       openGraph: {
         title: title,
         description: description,
-        images: ["/logo_Thalys.png"],
+        images: ["/logo_Thalys_OP.jpg"],
       }
     };
   }

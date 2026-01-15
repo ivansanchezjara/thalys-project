@@ -12,7 +12,7 @@ export async function generateMetadata({ searchParams }) {
       title: `Resultados para "${query}"`,
       description: `Mirá los productos que encontramos para "${query}" en el catálogo de Thalys.`,
       openGraph: {
-        images: ["/logo_Thalys.png"],
+        images: ["/logo_Thalys_OP.jpg"],
       }
     };
   }
@@ -22,7 +22,7 @@ export async function generateMetadata({ searchParams }) {
     description:
       "Explora todos nuestros productos. Eleva tu clínica al siguiente nivel.",
     openGraph: {
-      images: ["/logo_Thalys.png"],
+      images: ["/logo_Thalys_OP.jpg"],
     },
   };
 }

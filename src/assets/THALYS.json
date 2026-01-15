@@ -300,7 +300,7 @@
     "subCategory": "Periótomos",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": ["periotomo", "anterior", "cirugía", "extracción", "estética"]
+    "tags": ["periotomo", "anterior", "cirugía", "extracción"]
   },
   {
     "generalCode": "THA-211221-",
@@ -395,8 +395,7 @@
       "wedelstaedt",
       "cirugía",
       "preparación cavitaria",
-      "odontología",
-      "estética"
+      "odontología"
     ],
     "variants": [
       {
@@ -434,14 +433,7 @@
     "slug": "periostotomo-allen",
     "description": "PERIOSTÓTOMO ALLEN PARA LEVANTAMIENTO DE COLGAJO",
     "longDescription": "Instrumental quirúrgico especializado de la línea Thalys diseñado para el levantamiento preciso del periostio. Sus bordes cortantes de alta calidad permiten un despegamiento del colgajo con el mínimo trauma tisular. Disponibles en configuraciones específicas para optimizar el acceso tanto en el sector anterior como en el posterior.",
-    "tags": [
-      "periostótomo",
-      "allen",
-      "cirugía",
-      "colgajo",
-      "periodoncia",
-      "estética gingival"
-    ],
+    "tags": ["periostótomo", "allen", "cirugía", "colgajo", "periodoncia"],
     "variants": [
       {
         "productCode": "THA-2114001",
@@ -1731,7 +1723,7 @@
     "image": ["THA-2171203-1.jpg"],
     "categories": "Instrumentales",
     "subCategory": "Espátulas",
-    "professionalAreas": "Estética",
+    "professionalAreas": "Restauración",
     "featured": true,
     "variantType": "Color",
     "slug": "espatulas-resina-almore",
