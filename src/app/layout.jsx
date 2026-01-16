@@ -19,10 +19,29 @@ export const metadata = {
   openGraph: {
     title: "Thalys | Insumos Odontológicos",
     description: "Precisión que inspira confianza clínica.",
-    images: ["/logo_Thalys_OP.jpg"],
+    url: "https://main.dnxy71hbjzz8y.amplifyapp.com/",
+    siteName: "Thalys",
+    images: [
+      {
+        url: "/logo_Thalys_OP.jpg",
+        width: 600,
+        height: 600,
+        alt: "Thalys Logo",
+      },
+    ],
     type: "website",
     locale: "es_PY",
   },
+  icons: {
+    icon: [
+      { url: '/icon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon.png' },
+    ],
+  },
+
 };
 
 export default function RootLayout({ children }) {
