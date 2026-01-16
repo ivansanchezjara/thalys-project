@@ -7,22 +7,13 @@
     "categories": "Instrumentales",
     "subCategory": "Mangos de Bisturí",
     "professionalAreas": "Cirugía",
-    "attributes": {
-      "material": "Acero Inoxidable",
-      "handleType": "Redondo"
-    },
+    "attributes": {},
     "featured": true,
     "variantType": "Modelo",
     "slug": "mango-de-bisturi",
     "description": "MANGOS DE BISTURÍ DISPONIBLES EN MODELOS AJUSTABLE, #5 Y #5A",
     "longDescription": "Mangos de bisturí Thalys fabricados en acero inoxidable de grado quirúrgico. Modelos disponibles: ajustable para ángulos complejos, y modelos ergonómicos #5 y #5A con diseño redondo para un control táctil superior en procedimientos de precisión.",
-    "tags": [
-      "mango ajustable",
-      "bisturí",
-      "cirugía",
-      "acero inoxidable",
-      "microcirugía"
-    ],
+    "tags": ["mango ajustable", "bisturí", "cirugía", "microcirugía"],
     "variants": [
       {
         "productCode": "THA-2111003",
@@ -174,10 +165,7 @@
     "categories": "Instrumentales",
     "subCategory": "Mangos",
     "professionalAreas": "Diagnóstico",
-    "attributes": {
-      "type": "Hueco",
-      "material": "Acero quirúrgico"
-    },
+    "attributes": {},
     "featured": false,
     "tags": ["mango", "espejo", "hueco", "diagnóstico", "instrumental"]
   },
@@ -193,10 +181,7 @@
     "categories": "Instrumentales",
     "subCategory": "Sondas",
     "professionalAreas": "Diagnóstico",
-    "attributes": {
-      "type": "Exploradora",
-      "tip": "#17/23"
-    },
+    "attributes": {},
     "featured": false,
     "tags": ["sonda", "exploradora", "EXP5", "diagnóstico", "caries"]
   },
@@ -212,9 +197,7 @@
     "categories": "Instrumentales",
     "subCategory": "Sondas",
     "professionalAreas": "Diagnóstico",
-    "attributes": {
-      "tip": "Nabers"
-    },
+    "attributes": {},
     "featured": false,
     "tags": ["sonda", "nabers", "furcacion", "diagnostico"]
   },
@@ -230,9 +213,7 @@
     "categories": "Instrumentales",
     "subCategory": "Sondas",
     "professionalAreas": "Diagnóstico",
-    "attributes": {
-      "tip": "PCP12"
-    },
+    "attributes": {},
     "featured": true,
     "tags": ["sonda", "pcp12", "diagnostico"]
   },
@@ -248,9 +229,7 @@
     "categories": "Instrumentales",
     "subCategory": "Sondas",
     "professionalAreas": "Diagnóstico",
-    "attributes": {
-      "tip": "UNC15"
-    },
+    "attributes": {},
     "featured": false,
     "tags": ["sonda", "pcpunc15", "carolina del norte", "diagnostico"]
   },
@@ -268,9 +247,7 @@
     "professionalAreas": "Diagnóstico",
     "featured": true,
     "tags": ["espejo", "viton", "bucal", "diagnostico", "front surface"],
-    "attributes": {
-      "tip": "FS"
-    }
+    "attributes": {}
   },
   {
     "generalCode": "THA-2114004",
@@ -352,15 +329,7 @@
     "slug": "cincel-fedi",
     "description": "CINCELES FEDI PARA CIRUGÍA PERIODONTAL Y OSTEOTOMÍA",
     "longDescription": "Línea de cinceles quirúrgicos FEDI diseñados específicamente para el acceso a zonas de difícil alcance en cirugía periodontal. Sus extremos angulados permiten un contorneado óseo preciso y una osteotomía controlada, facilitando el trabajo en sectores posteriores y áreas con visibilidad reducida. Fabricados en acero inoxidable quirúrgico de alta resistencia.",
-    "tags": [
-      "cincel",
-      "fedi",
-      "cirugía",
-      "periodoncia",
-      "acero inoxidable",
-      "hueso",
-      "osteotomía"
-    ],
+    "tags": ["cincel", "fedi", "cirugía", "periodoncia", "hueso", "osteotomía"],
     "variants": [
       {
         "productCode": "THA-2112201",
@@ -495,13 +464,7 @@
     "subCategory": "Periostótomos",
     "professionalAreas": "Cirugía",
     "featured": false,
-    "tags": [
-      "periostótomo",
-      "149",
-      "cirugía",
-      "regeneración",
-      "acero inoxidable"
-    ],
+    "tags": ["periostótomo", "149", "cirugía", "regeneración"],
     "attributes": {}
   },
   {
@@ -578,14 +541,7 @@
     "slug": "cureta-lucas",
     "description": "CURETAS QUIRÚRGICAS DISPONIBLES EN MODELOS #85, #86 Y #87",
     "longDescription": "Línea de curetas quirúrgicas Lucas fabricadas en acero inoxidable de grado quirúrgico. Modelos diseñados para el desbridamiento de alvéolos después de una extracción y para la eliminación eficaz de tejido de granulación, restos de ligamento o tejido quístico de la cavidad ósea.",
-    "tags": [
-      "cureta",
-      "lucas",
-      "cirugía",
-      "desbridamiento",
-      "exodoncia",
-      "acero inoxidable"
-    ],
+    "tags": ["cureta", "lucas", "cirugía", "desbridamiento", "exodoncia"],
     "variants": [
       {
         "productCode": "THA-2113505",
@@ -746,9 +702,7 @@
       "vidia",
       "14cm"
     ],
-    "attributes": {
-      "tipo": "Recto"
-    }
+    "attributes": {}
   },
   {
     "generalCode": "THA-2117410T",
@@ -771,9 +725,7 @@
       "cirugía",
       "instrumental"
     ],
-    "attributes": {
-      "longitud": "14cm"
-    }
+    "attributes": {}
   },
   {
     "generalCode": "THA-2117130",
@@ -839,9 +791,7 @@
     "professionalAreas": "Cirugía",
     "featured": false,
     "tags": ["kocher", "hemostática", "14cm", "cirugía", "instrumental"],
-    "attributes": {
-      "longitud": "14cm"
-    }
+    "attributes": {}
   },
   {
     "generalCode": "THA-2117521",
@@ -857,9 +807,7 @@
     "professionalAreas": "Cirugía",
     "featured": false,
     "tags": ["allis", "tejidos", "15cm", "cirugía", "sujeción"],
-    "attributes": {
-      "longitud": "15cm"
-    }
+    "attributes": {}
   },
   {
     "generalCode": "THA-2119010",
@@ -1063,7 +1011,6 @@
       "hilo retractor",
       "bn1",
       "restauracion",
-      "acero inoxidable",
       "autoclavable"
     ],
     "attributes": {}
@@ -1086,7 +1033,6 @@
       "hilo retractor",
       "yardley",
       "restauracion",
-      "acero inoxidable",
       "autoclavable"
     ],
     "attributes": {}
@@ -1109,7 +1055,6 @@
       "hilo retractor",
       "113",
       "restauracion",
-      "acero inoxidable",
       "autoclavable",
       "thalys"
     ],
@@ -1147,7 +1092,6 @@
       "hilo retractor",
       "guyer",
       "restauracion",
-      "acero inoxidable",
       "autoclavable",
       "thalys"
     ],
@@ -1265,8 +1209,7 @@
       "composite",
       "resina",
       "modelado",
-      "restauracion",
-      "acero inoxidable"
+      "restauracion"
     ],
     "attributes": {}
   },
@@ -1283,14 +1226,7 @@
     "subCategory": "Bruñidores",
     "professionalAreas": "Restauración",
     "featured": true,
-    "tags": [
-      "brunidor",
-      "21",
-      "acabado",
-      "pulido",
-      "restauracion",
-      "acero inoxidable"
-    ],
+    "tags": ["brunidor", "21", "acabado", "pulido", "restauracion"],
     "attributes": {}
   },
   {
@@ -1312,8 +1248,7 @@
       "resina",
       "obturacion",
       "modelado",
-      "restauracion",
-      "acero inoxidable"
+      "restauracion"
     ],
     "attributes": {}
   },
@@ -1655,9 +1590,7 @@
       "caries",
       "limpieza",
       "cucharita",
-      "restauracion",
-      "acero inoxidable",
-      "thalys"
+      "restauracion"
     ],
     "variants": [
       {
@@ -1735,9 +1668,7 @@
       "composite",
       "ceramica",
       "estetica",
-      "acero inoxidable",
-      "autoclavable",
-      "thalys"
+      "autoclavable"
     ],
     "variants": [
       {
@@ -1781,8 +1712,7 @@
       "ortodoncia",
       "contorneado",
       "arcos",
-      "alambre",
-      "acero inoxidable"
+      "alambre"
     ],
     "attributes": {}
   },
@@ -1799,15 +1729,7 @@
     "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
-    "tags": [
-      "alicate",
-      "kim",
-      "ortodoncia",
-      "doblado",
-      "corte",
-      "alambre",
-      "acero inoxidable"
-    ],
+    "tags": ["alicate", "kim", "ortodoncia", "doblado", "corte", "alambre"],
     "attributes": {}
   },
   {
@@ -1830,9 +1752,7 @@
       "222",
       "macho",
       "hembra",
-      "alambre rectangular",
-      "acero inoxidable",
-      "thalys"
+      "alambre rectangular"
     ],
     "variants": [
       {
@@ -1863,15 +1783,7 @@
     "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
-    "tags": [
-      "alicate",
-      "ortodoncia",
-      "v bend",
-      "tope",
-      "doblez",
-      "168",
-      "acero inoxidable"
-    ],
+    "tags": ["alicate", "ortodoncia", "v bend", "tope", "doblez", "168"],
     "attributes": {}
   },
   {
@@ -1887,14 +1799,7 @@
     "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
-    "tags": [
-      "alicate",
-      "ortodoncia",
-      "442",
-      "doblar arcos",
-      "alambre",
-      "acero inoxidable"
-    ],
+    "tags": ["alicate", "ortodoncia", "442", "doblar arcos", "alambre"],
     "attributes": {}
   },
   {
@@ -1917,9 +1822,7 @@
       "pins",
       "ortodoncia",
       "150",
-      "150l",
-      "acero inoxidable",
-      "thalys"
+      "150l"
     ],
     "variants": [
       {
@@ -1957,9 +1860,7 @@
       "ortodoncia",
       "700",
       "700m",
-      "arcos",
-      "acero inoxidable",
-      "thalys"
+      "arcos"
     ],
     "variants": [
       {
@@ -1992,18 +1893,8 @@
     "subCategory": "Alicates",
     "professionalAreas": "Ortodoncia",
     "featured": true,
-    "tags": [
-      "alicate",
-      "corte pesado",
-      "770",
-      "recto",
-      "ortodoncia",
-      "arcos",
-      "acero inoxidable"
-    ],
-    "attributes": {
-      "tipo": "Recto"
-    }
+    "tags": ["alicate", "corte pesado", "770", "recto", "ortodoncia", "arcos"],
+    "attributes": {}
   },
   {
     "generalCode": "THA-2143121V",
@@ -2024,8 +1915,7 @@
       "701",
       "seguro",
       "delgado",
-      "ortodoncia",
-      "acero inoxidable"
+      "ortodoncia"
     ],
     "subCategory": "Alicates",
     "attributes": {}
@@ -2049,8 +1939,7 @@
       "utilitario",
       "ultra delgado",
       "ortodoncia",
-      "manipulacion",
-      "acero inoxidable"
+      "manipulacion"
     ],
     "attributes": {}
   },
@@ -2073,12 +1962,9 @@
       "instrumental",
       "bandeja",
       "organizador",
-      "acero inoxidable",
       "autoclavable"
     ],
-    "attributes": {
-      "material": "Acero Inoxidable"
-    }
+    "attributes": {}
   },
   {
     "generalCode": "THA-2102500",
@@ -2099,8 +1985,7 @@
       "rejilla",
       "esterilizacion",
       "organizador",
-      "cassette",
-      "acero inoxidable"
+      "cassette"
     ],
     "attributes": {}
   },
@@ -2123,7 +2008,6 @@
       "10 instrumentos",
       "esterilizacion",
       "organizacion",
-      "acero inoxidable",
       "autoclavable"
     ],
     "attributes": {}

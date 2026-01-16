@@ -1,26 +1,22 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import ProductsCarousel from "@/components/ui/ProductsCarousel";
 import { SearchResults } from "./SearchResults";
-import { AccordionSection } from "@/components/products/AccordionSection";
-import { normalizeText, toSlug } from "@/utils/textHelpers";
+import { normalizeText } from "@/utils/textHelpers";
+import Sections from "./Sections";
 
 export default function ProductsContent({ initialProducts = [] }) {
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get("q") || "";
 
-  const productsData = initialProducts;
-  const totalProducts = productsData.length;
-
-  const [openSection, setOpenSection] = useState("especialidades");
+  const totalProducts = initialProducts.length;
 
   // --- LÓGICA DE BÚSQUEDA PROFUNDA (CORREGIDA) ---
   const filteredResults = useMemo(() => {
     if (!searchQuery) return [];
     const term = normalizeText(searchQuery);
 
-    return productsData.filter((p) => {
+    return initialProducts.filter((p) => {
       // 1. Match en datos principales
       const matchMain =
         normalizeText(p.name).includes(term) ||
@@ -40,37 +36,7 @@ export default function ProductsContent({ initialProducts = [] }) {
 
       return matchMain || matchVariants || matchTags;
     });
-  }, [searchQuery, productsData]);
-
-  // --- LÓGICA DE MAPEOS ---
-  const categoriesMap = useMemo(() => {
-    if (searchQuery) return {};
-    const groups = {};
-    productsData.forEach((p) => {
-      const cat = p.categories || "Otros";
-      if (!groups[cat]) groups[cat] = [];
-      groups[cat].push(p);
-    });
-    return groups;
-  }, [searchQuery, productsData]);
-
-  const specialtiesMap = useMemo(() => {
-    if (searchQuery) return {};
-    const groups = {};
-    productsData.forEach((p) => {
-      if (p.professionalAreas) {
-        const areas = p.professionalAreas.split(",").map((a) => a.trim());
-        areas.forEach((area) => {
-          if (area === "General") return;
-          if (!groups[area]) groups[area] = [];
-          groups[area].push(p);
-        });
-      }
-    });
-    return groups;
-  }, [searchQuery, productsData]);
-
-  const getCategoryLink = (name) => `/products/${toSlug(name)}`;
+  }, [searchQuery, initialProducts]);
 
   return (
     <main className="max-w-7xl mx-auto py-6 lg:py-16">
@@ -95,55 +61,9 @@ export default function ProductsContent({ initialProducts = [] }) {
           searchQuery={searchQuery}
           activeCategory="Todos"
         />
-      ) : (
-        <div className="space-y-4 animate-fadeIn">
-          {/* SECCIÓN ESPECIALIDADES */}
-          <AccordionSection
-            title="Explorar por Especialidad"
-            subtitle="Instrumental específico para tu práctica."
-            isOpen={openSection === "especialidades"}
-            onToggle={() =>
-              setOpenSection(
-                openSection === "especialidades" ? null : "especialidades"
-              )
-            }
-          >
-            <div className="bg-gray-50 space-y-4">
-              {Object.entries(specialtiesMap).map(([name, products]) => (
-                <ProductsCarousel
-                  key={name}
-                  products={products}
-                  title={name}
-                  viewAllLink={getCategoryLink(name)}
-                  pathPrefix={toSlug(name)}
-                />
-              ))}
-            </div>
-          </AccordionSection>
-
-          {/* SECCIÓN CATEGORÍAS */}
-          <AccordionSection
-            title="Tipos de Productos"
-            subtitle="Catálogo organizado por categorías técnicas."
-            isOpen={openSection === "productos"}
-            onToggle={() =>
-              setOpenSection(openSection === "productos" ? null : "productos")
-            }
-          >
-            <div className="space-y-4">
-              {Object.entries(categoriesMap).map(([name, products]) => (
-                <ProductsCarousel
-                  key={name}
-                  products={products}
-                  title={name}
-                  viewAllLink={getCategoryLink(name)}
-                  pathPrefix={null}
-                />
-              ))}
-            </div>
-          </AccordionSection>
-        </div>
-      )}
+      ) :
+        <Sections productsData={initialProducts} />
+      }
     </main>
   );
 }

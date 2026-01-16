@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { MessageCircle, Tag, ShieldCheck, Truck } from "lucide-react";
-import AddToCartSingle from "@/app/products/[...slug]/addToCartSingle"; // Ajusta la ruta si mueves addToCartSingle
+import { MessageCircle, Tag, ShieldCheck, Truck, Ruler } from "lucide-react";
+import AddToCartSingle from "@/app/products/[...slug]/addToCartSingle";
 import ProductImageGallery from "@/components/ui/ProductImageGallery";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
 
@@ -11,17 +11,27 @@ export default function ProductDetailView({ product, selectedVariant, segments }
     const currentProductCode = selectedVariant ? selectedVariant.productCode : product.productCode;
     const currentVariantName = selectedVariant ? selectedVariant.variant : null;
 
-    // Cálculo del Path Prefix para Breadcrumbs correctos
+    // Path Prefix
     const pathPrefix = segments.slice(0, -1).join('/');
 
+    // WhatsApp Message
     const whatsappMessage = `¡Hola Thalys! Me interesa información sobre: ${product.name}${currentVariantName
         ? ` - ${product.variantType || "Opción"}: ${currentVariantName}`
         : ""
         } (Código: ${currentProductCode})`;
 
+    // Images logic
     const images = selectedVariant?.image && selectedVariant.image.length > 0
         ? selectedVariant.image
         : Array.isArray(product.image) ? product.image : [product.image];
+
+    // --- HELPER: Formatear nombres de atributos ---
+    const formatAttributeName = (key) => {
+        return key
+            .replace(/_/g, " ")
+            .replace(/([A-Z])/g, " $1")
+            .replace(/^./, (str) => str.toUpperCase());
+    };
 
     return (
         <main className="max-w-7xl mx-auto px-6 py-6 lg:py-20">
@@ -34,7 +44,7 @@ export default function ProductDetailView({ product, selectedVariant, segments }
                 />
 
                 <div className="flex flex-col justify-center">
-                    {/* Header con Categoría y Código */}
+                    {/* Header: Categoría + Código */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 text-left">
                         <div className="flex items-center flex-wrap gap-2">
                             <span className="text-thalys-gold text-[12px] font-bold uppercase tracking-[0.2em]">
@@ -56,11 +66,44 @@ export default function ProductDetailView({ product, selectedVariant, segments }
                         {currentVariantName && <span className="text-thalys-red ml-2">({currentVariantName})</span>}
                     </h1>
 
-                    {/* Descripción */}
+                    {/* Descripción Narrativa */}
                     <div className="mb-6 text-left">
                         <h2 className="text-[10px] font-bold text-thalys-blue/40 uppercase tracking-widest mb-3">Descripción Técnica</h2>
                         <p className="text-base text-left lg:text-lg text-thalys-text leading-relaxed font-light">{product.longDescription}</p>
                     </div>
+
+                    {/* --- TABLA DE ATRIBUTOS (ANCHO COMPLETO) --- */}
+                    {product.attributes && Object.keys(product.attributes).length > 0 && (
+                        <div className="mb-8 w-full overflow-hidden rounded-xl border border-gray-200 bg-white">
+                            <table className="min-w-full text-left text-sm">
+                                <thead className="border-b border-gray-200 bg-gray-50">
+                                    <tr>
+                                        {/* CORRECCIÓN: Quitamos 'flex' del th y lo ponemos en un div interno */}
+                                        <th colSpan="2" className="px-5 py-3 text-gray-700 tracking-wider text-sm">
+                                            <div className="flex items-center gap-2">
+                                                <Ruler size={14} className="text-thalys-red" />
+                                                <span>Especificaciones</span>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-gray-100">
+                                    {Object.entries(product.attributes).map(([key, value], index) => (
+                                        <tr key={key} className={index % 2 === 0 ? "bg-white" : "bg-gray-50/40"}>
+                                            {/* Columna Nombre: 33% del ancho */}
+                                            <td className="px-5 py-3 font-medium text-gray-500 w-1/3 border-r border-gray-50">
+                                                {formatAttributeName(key)}
+                                            </td>
+                                            {/* Columna Valor: Resto del ancho */}
+                                            <td className="px-5 py-3 font-semibold text-thalys-blue">
+                                                {value}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
 
                     {/* Tags */}
                     {product.tags && product.tags.length > 0 && (
