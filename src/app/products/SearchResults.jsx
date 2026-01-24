@@ -1,5 +1,5 @@
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { ProductCard } from "@/components/products/ProductsCard";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
 import ShareButton from "@/components/ui/ShareButton";
@@ -10,12 +10,11 @@ import { toSlug } from "@/utils/textHelpers";
 const ITEMS_PER_PAGE = 24;
 
 export function SearchResults({ results, searchQuery, activeCategory }) {
-  const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
 
-  // Reset page when results/query change
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [results, searchQuery]);
+  const currentPage = Number(searchParams.get("page")) || 1;
 
   const totalItems = results.length;
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
@@ -25,7 +24,9 @@ export function SearchResults({ results, searchQuery, activeCategory }) {
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
-      setCurrentPage(newPage);
+      const params = new URLSearchParams(searchParams.toString());
+      params.set("page", newPage.toString());
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };

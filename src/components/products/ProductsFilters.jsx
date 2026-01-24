@@ -2,7 +2,10 @@ import { ChevronDown, ChevronUp, Filter, X } from "lucide-react";
 import { useState } from "react";
 
 export default function ProductsFilters({ filterGroups, clearAll }) {
-  const [isOpen, setIsOpen] = useState(false);
+  // Inicializamos abierto si hay algún filtro activo
+  const [isOpen, setIsOpen] = useState(() =>
+    filterGroups.some(g => g.active && g.active !== "Todos")
+  );
 
   return (
     <div className="w-full md:w-64 flex-shrink-0 mb-8 md:mb-0">
@@ -40,7 +43,7 @@ export default function ProductsFilters({ filterGroups, clearAll }) {
 }
 
 function FilterGroup({ group }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(group.active && group.active !== "Todos");
 
   if (!group.options || group.options.length <= 1) return null;
 

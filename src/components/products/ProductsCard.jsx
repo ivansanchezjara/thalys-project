@@ -46,7 +46,7 @@ export const ProductCard = ({ product }) => {
         </span>
 
         {/* NOMBRE */}
-        <h3 className="text-sm font-medium text-thalys-blue mb-2 leading-tight group-hover:underline underline-offset-2 transition-all line-clamp-2 min-h-[2.5em]">
+        <h3 className="text-sm font-medium text-thalys-blue mb-2 leading-tight group-hover:underline underline-offset-2 transition-all line-clamp-4 min-h-[2.5em]">
           {product.name}
         </h3>
 

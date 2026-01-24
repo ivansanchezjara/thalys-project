@@ -6,7 +6,7 @@ import { toSlug } from "@/utils/textHelpers";
 
 export default function Sections({ productsData }) {
 
-    const [openSection, setOpenSection] = useState("especialidades");
+    const [openSection, setOpenSection] = useState(null);
 
     // --- LÓGICA DE MAPEOS ---
     const categoriesMap = useMemo(() => {

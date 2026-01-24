@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { MessageCircle, Tag, ShieldCheck, Truck, Ruler } from "lucide-react";
-import AddToCartSingle from "@/app/products/[...slug]/addToCartSingle";
+import AddToCartSingle from "./addToCartSingle";
 import ProductImageGallery from "@/components/ui/ProductImageGallery";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
 
@@ -33,6 +33,18 @@ export default function ProductDetailView({ product, selectedVariant, segments }
             .replace(/^./, (str) => str.toUpperCase());
     };
 
+    // --- LÓGICA DE ATRIBUTOS COMBINADOS ---
+    const baseAttributes = product.attributes || {};
+    const variantAttributes = selectedVariant?.attributes || {};
+
+    // Fusionamos todo en un solo objeto para mostrar
+    const displayAttributes = {
+        ...baseAttributes,
+        ...variantAttributes
+    };
+
+    const hasAttributes = Object.keys(displayAttributes).length > 0;
+
     return (
         <main className="max-w-7xl mx-auto px-6 py-6 lg:py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-12 lg:gap-24">
@@ -61,7 +73,7 @@ export default function ProductDetailView({ product, selectedVariant, segments }
                     </div>
 
                     {/* Título */}
-                    <h1 className="text-left text-3xl lg:text-5xl font-bold text-thalys-blue mb-6 leading-[1.1]">
+                    <h1 className="text-left text-3xl lg:text-4xl font-bold text-thalys-blue mb-6 leading-[1.1]">
                         {product.name}
                         {currentVariantName && <span className="text-thalys-red ml-2">({currentVariantName})</span>}
                     </h1>
@@ -72,15 +84,15 @@ export default function ProductDetailView({ product, selectedVariant, segments }
                         <p className="text-base text-left lg:text-lg text-thalys-text leading-relaxed font-light">{product.longDescription}</p>
                     </div>
 
-                    {/* --- TABLA DE ATRIBUTOS (ANCHO COMPLETO) --- */}
-                    {product.attributes && Object.keys(product.attributes).length > 0 && (
+                    {/* --- TABLA DE ATRIBUTOS (ANCHO COMPLETO & COMBINADA) --- */}
+                    {hasAttributes && (
                         <div className="mb-8 w-full overflow-hidden rounded-xl border border-gray-200 bg-white">
                             <table className="min-w-full text-left text-sm">
                                 <thead className="border-b border-gray-200 bg-gray-50">
                                     <tr>
-                                        {/* CORRECCIÓN: Quitamos 'flex' del th y lo ponemos en un div interno */}
+                                        {/* Header Centrado */}
                                         <th colSpan="2" className="px-5 py-3 text-gray-700 tracking-wider text-sm">
-                                            <div className="flex items-center gap-2">
+                                            <div className="flex items-center justify-center gap-2">
                                                 <Ruler size={14} className="text-thalys-red" />
                                                 <span>Especificaciones</span>
                                             </div>
@@ -88,7 +100,7 @@ export default function ProductDetailView({ product, selectedVariant, segments }
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-100">
-                                    {Object.entries(product.attributes).map(([key, value], index) => (
+                                    {Object.entries(displayAttributes).map(([key, value], index) => (
                                         <tr key={key} className={index % 2 === 0 ? "bg-white" : "bg-gray-50/40"}>
                                             {/* Columna Nombre: 33% del ancho */}
                                             <td className="px-5 py-3 font-medium text-gray-500 w-1/3 border-r border-gray-50">
@@ -104,6 +116,7 @@ export default function ProductDetailView({ product, selectedVariant, segments }
                             </table>
                         </div>
                     )}
+                    {/* ------------------------------------------------------- */}
 
                     {/* Tags */}
                     {product.tags && product.tags.length > 0 && (

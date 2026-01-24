@@ -2,6 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
 import { resolveRouteData } from "@/lib/routeResolver";
+import RotatoriosTemplate from "./RotatoriosTemplate";
 
 // Componentes UI
 import CategoryTemplate from "@/components/products/CategoryTemplate";
@@ -69,15 +70,27 @@ export default async function ProductPage({ params }) {
       );
 
     case "CATEGORY":
-      return (
-        <CategoryTemplate
-          categorySlug={result.data.categorySlug}
-          subCategorySlug={result.data.subCategorySlug}
-          title={result.data.title}
-          description={result.data.description}
-          productsData={result.data.products}
-        />
-      );
+      if (result.data.categorySlug == "rotatorios") {
+        return (
+          <RotatoriosTemplate
+            categorySlug={result.data.categorySlug}
+            subCategorySlug={result.data.subCategorySlug}
+            title={result.data.title}
+            description={result.data.description}
+            productsData={result.data.products}
+          />
+        )
+      } else {
+        return (
+          <CategoryTemplate
+            categorySlug={result.data.categorySlug}
+            subCategorySlug={result.data.subCategorySlug}
+            title={result.data.title}
+            description={result.data.description}
+            productsData={result.data.products}
+          />
+        );
+      }
 
     case "SPECIALTY":
       return (

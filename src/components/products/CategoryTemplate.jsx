@@ -5,7 +5,7 @@ import ProductsFilters from "@/components/products/ProductsFilters";
 import { THALYS_IMAGES_URL } from "@/assets/constants";
 import { PaginationInfo, PaginationControls } from "@/components/ui/Pagination";
 import { useProductFilters } from "@/hooks/useProductFilters";
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { toSlug } from "@/utils/textHelpers";
 
 const ITEMS_PER_PAGE = 24;
@@ -40,10 +40,24 @@ export default function CategoryTemplate({
   const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalItems);
   const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
 
+  const itemsSectionRef = useRef(null);
+
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // Scroll to the top of the products section
+      if (itemsSectionRef.current) {
+        const yOffset = -100; // Optional offset for sticky headers
+        const element = itemsSectionRef.current;
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+
+        // Fallback or alternative:
+        // itemsSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     }
   };
 
@@ -68,7 +82,7 @@ export default function CategoryTemplate({
         active: activeAttributes[attr.key] || "Todos",
         setActive: (val) => handleAttributeChange(attr.key, val),
       })),
-    ].filter((g) => g.options.length > 1);
+    ].filter((g) => g.options.length > 2);
   }, [
     subCategories,
     professionalAreas,
@@ -82,7 +96,7 @@ export default function CategoryTemplate({
   ]);
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+    <main ref={itemsSectionRef} className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
       {/* HEADER */}
       <header className="mb-6 flex flex-col items-center justify-center text-center border-b border-gray-100 pb-6">
         <h1 className="text-4xl lg:text-5xl font-poppins font-bold text-thalys-blue">

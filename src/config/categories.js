@@ -24,6 +24,17 @@ export const CATEGORIES = {
       description: "Guantes, mascarillas y esterilización para tu clínica.",
     },
   },
+  rotatorios: {
+    name: "Rotatorios",
+    title: "Rotatorios",
+    description:
+      "Tecnología de corte superior en fresas de diamante y carburo para máxima precisión.",
+    metadata: {
+      title: "Fresas y Rotatorios Dentales | Thalys",
+      description:
+        "Catálogo de fresas de diamante (FG), carburo y pulidores de alta velocidad.",
+    },
+  },
   destacados: {
     name: "Destacados",
     title: "Productos Destacados",
@@ -35,6 +46,16 @@ export const CATEGORIES = {
         "Los mejores productos de nuestro catálogo seleccionados para ti.",
     },
     isSpecial: true, // Filtra por 'featured' en lugar de 'categories'
+  },
+  accesorios: {
+    name: "Accesorios",
+    title: "Accesorios",
+    description: "Descubre los accesorios más destacados de nuestro catálogo.",
+    metadata: {
+      title: "Accesorios | Thalys",
+      description:
+        "Los mejores accesorios de nuestro catálogo seleccionados para ti.",
+    },
   },
 };
 

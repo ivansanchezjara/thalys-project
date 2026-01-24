@@ -4,7 +4,7 @@ import Link from "next/link";
 import {
     ChevronDown, ChevronRight,
     Grip, ShieldCheck, Scissors, Armchair,
-    Syringe, Box, ScanFace, Monitor, BriefcaseMedical
+    Syringe, Box, ScanFace, WandSparkles, BriefcaseMedical
 } from "lucide-react";
 import { toSlug } from "@/utils/textHelpers";
 
@@ -72,7 +72,7 @@ export default function CategoriesMenu({ mobile = false, onItemClick, productsDa
         if (n.includes("aneste")) return <Syringe size={18} className="text-gray-400" />;
         if (n.includes("sillon") || n.includes("cadeira")) return <Armchair size={18} className="text-gray-400" />;
         if (n.includes("moldagem") || n.includes("modelo")) return <ScanFace size={18} className="text-gray-400" />;
-        if (n.includes("equip")) return <Monitor size={18} className="text-gray-400" />;
+        if (n.includes("rotato")) return <WandSparkles size={18} className="text-gray-400" />;
         return <BriefcaseMedical size={18} className="text-gray-400" />;
     };
 
