@@ -32,16 +32,6 @@ export const metadata = {
     type: "website",
     locale: "es_PY",
   },
-  icons: {
-    icon: [
-      { url: '/icon.ico' },
-      { url: '/icon.png', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/icon.png' },
-    ],
-  },
-
 };
 
 export default function RootLayout({ children }) {
