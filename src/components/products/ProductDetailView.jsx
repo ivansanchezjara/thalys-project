@@ -73,9 +73,9 @@ export default function ProductDetailView({ product, selectedVariant, segments }
                     </div>
 
                     {/* Título */}
-                    <h1 className="text-left text-3xl lg:text-4xl font-bold text-thalys-blue mb-6 leading-[1.1]">
+                    <h1 className="text-left text-2xl lg:text-3xl font-bold text-thalys-blue mb-6 leading-[1.1]">
                         {product.name}
-                        {currentVariantName && <span className="text-thalys-red ml-2">({currentVariantName})</span>}
+                        {currentVariantName && <span className="text-thalys-red ml-2">{currentVariantName}</span>}
                     </h1>
 
                     {/* Descripción Narrativa */}
