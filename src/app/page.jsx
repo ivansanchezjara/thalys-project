@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* 2. PRODUCTOS DESTACADOS */}
-      <section className="bg-white py-6 lg:py-16">
+      <section className="bg-white py-4 lg:py-8">
         <div className="max-w-7xl mx-auto">
           <ProductsCarousel products={featuredProducts} title="Destacados" />
         </div>
