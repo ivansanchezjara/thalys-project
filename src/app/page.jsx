@@ -84,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* 3. BARRA DE BENEFICIOS: Genera confianza inmediata */}
-      <section className="pt-8 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 gap-6 justify-center">
           {/* Card 1 */}
           <div className="flex flex-col items-center text-center gap-4 p-8 rounded-2xl bg-blue-50/50 transition-transform hover:scale-105">
