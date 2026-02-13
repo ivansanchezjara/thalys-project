@@ -76,7 +76,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. BARRA DE BENEFICIOS: Genera confianza inmediata */}
+      {/* 2. PRODUCTOS DESTACADOS */}
+      <section className="bg-white py-6 lg:py-16">
+        <div className="max-w-7xl mx-auto">
+          <ProductsCarousel products={featuredProducts} title="Destacados" />
+        </div>
+      </section>
+
+      {/* 3. BARRA DE BENEFICIOS: Genera confianza inmediata */}
       <section className="pt-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 gap-6 justify-center">
           {/* Card 1 */}
@@ -117,13 +124,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 3. PRODUCTOS DESTACADOS */}
-      <section className="bg-white py-6 lg:py-16">
-        <div className="max-w-7xl mx-auto">
-          <ProductsCarousel products={featuredProducts} title="Destacados" />
         </div>
       </section>
     </div>
